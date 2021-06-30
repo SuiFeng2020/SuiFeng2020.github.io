@@ -8,6 +8,8 @@ tag: learning
 
 > #### 1. Gram-Schmidt正交化的修正策略
 
+> #### 1. Gram-Schmidt正交化的修正策略
+
 (标准 Gram-Schmidt 正交化) 给定 $n \times m(m \leqslant$$n)$ 阶列满秩矩阵 $\boldsymbol{X}=\left[\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \cdots, \boldsymbol{x}_{m}\right]$, 本算法产 生 $n \times m$ 阶正交矩阵 $\boldsymbol{Q}=\left[\boldsymbol{q}_{1}, \boldsymbol{q}_{2}, \cdots, \boldsymbol{q}_{m}\right]$和 $m \times m$ 阶非奇异上三角矩阵 $\boldsymbol{R}=\left(r_{i k}\right)$.
 
 $r_{11}=\left\|\boldsymbol{x}_{1}\right\|_{2} ; \boldsymbol{q}_{1}=\boldsymbol{x}_{1} / r_{11}$
@@ -381,7 +383,7 @@ $$
 \end{array}\right]=\left[\begin{array}{l}
 \boldsymbol{b} \\
 \mathbf{0}
-\end{array}\right] \label{eq4} \tag{4}
+\end{array}\right] {eq4} \tag{4}
 $$
 的解。上述线性系统称为最小二乘问题的KKT 方程。
 **证明** ：若 $x$ 为最小二乘问题 $\eqref{eq2}$ 的极小解，而 $\boldsymbol{r}=\boldsymbol{b}-\boldsymbol{A} \boldsymbol{x}$ 为 其残量，则
@@ -679,4 +681,6 @@ $$
 $$
 \boldsymbol{A}^{\dagger}=\boldsymbol{G}^{\dagger} \boldsymbol{F}^{\dagger}=\frac{1}{20}\left[\begin{array}{cccc}-1 & -2 & 3 & 4 \\ 4 & 3 & -2 & -1 \\ -1 & -2 & 3 & 4 \\ 4 & 3 & -2 & -1\end{array}\right]
 $$
+
+
 

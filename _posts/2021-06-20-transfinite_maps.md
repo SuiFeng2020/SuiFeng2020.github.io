@@ -17,36 +17,36 @@ The idea behind the transfinite maps (TMs) is to deform the interior points of t
 
 ### Offline stage
 
-For each side of the reference domain, we associate one weight function $\varphi_i$ with one projection function $\pi_{i}$ .For a domain with $n$ sides, we have to solve $2n$ elliptic problems; however, these computations are independent of the deformation (and so of the parameter $\mu$ ) and they could be included in the offline stage (computed just once) to guarantee computational efficiency.
+For each side of the reference domain, we associate one weight function $\varphi_i$ with one projection function $\pi_ {i}$ .For a domain with $n$ sides, we have to solve $2n$ elliptic problems; however, these computations are independent of the deformation (and so of the parameter $\mu$ ) and they could be included in the offline stage (computed just once) to guarantee computational efficiency.
 
 ![](D:\Data\GitHub\suifeng2020.github.io\images\posts\tansfinite maps\1.png)
 
 $$
 \left\{\begin{array}{ll}
-\Delta \varphi_{i}=0 & \text { in } \tilde{\Omega},  \\
-\varphi_{i}=1 & \text { on } \tilde{\Gamma}_ {i}, \\
-\frac{\partial \varphi_{i}}{\partial n}=0 & \text { on } \tilde{\Gamma}_ {j}, j=i-1, i+1, \\
-\varphi_{i}=0 & \text { on } \tilde{\Gamma}_ {j}, j \neq i-1, i, i+1
+\Delta \varphi_ {i}=0 & \text { in } \tilde{\Omega},  \\
+\varphi_ {i}=1 & \text { on } \tilde{\Gamma}_ {i}, \\
+\frac{\partial \varphi_ {i}}{\partial n}=0 & \text { on } \tilde{\Gamma}_ {j}, j=i-1, i+1, \\
+\varphi_ {i}=0 & \text { on } \tilde{\Gamma}_ {j}, j \neq i-1, i, i+1
 \end{array}\right.
 $$
 
 $$
 \left\{\begin{array}{ll}
-\Delta \pi_{i}=0 & \text { in } \tilde{\Omega} \\
-\pi_{i}=t & \text { on } \tilde{\Gamma}_ {i} \\
-\pi_{i}=0 & \text { on } \tilde{\Gamma}_ {i-1}, \\
-\pi_{i}=1 & \text { on } \tilde{\Gamma}_ {i+1}, \\
+\Delta \pi_ {i}=0 & \text { in } \tilde{\Omega} \\
+\pi_ {i}=t & \text { on } \tilde{\Gamma}_ {i} \\
+\pi_ {i}=0 & \text { on } \tilde{\Gamma}_ {i-1}, \\
+\pi_ {i}=1 & \text { on } \tilde{\Gamma}_ {i+1}, \\
 \frac{\partial \pi_ {i}}{\partial n}=0 & \text { on } \tilde{\Gamma}_ {j}, j \neq i-1, i, i+1,
 \end{array}\right.
 $$
 
 ### Online stage
 
-Let $\Omega=\Omega(\boldsymbol{\mu})$ be a parameterized domain. We suppose that $\Omega$ is a curved polygonal with the same number $n$ of edges. Let each edge $\Gamma_{i}, i=1, \ldots, n$ be parameterized trough the parameter $\mu \in \mathcal{D}$ by a bijective map $\psi_{i}:[0,1] \times \mathcal{D} \rightarrow \Gamma_{i}$ such that $\boldsymbol{\psi}_ {i}(1, \boldsymbol{\mu})=\boldsymbol{x}_ {i}$, where $\boldsymbol{x}_ {i}$ denotes the vertex shared by $\Gamma_ {i}$ and $\Gamma_ {i+1}$, and $\boldsymbol{\psi}_ {i}(0, \boldsymbol{\mu})=\boldsymbol{x}_ {i-1}$, where $\boldsymbol{x}_ {i-1}$ denotes the vertex shared by $\Gamma_ {i}$ and $\Gamma_{i-1}$. We denote by $\tilde{\boldsymbol{x}}$ a generic point of the reference domain $\tilde{\Omega}$ and by $\boldsymbol{x}$ a generic point of the parameterized domain $\Omega$. The transfinite map proposed is defined as:
+Let $\Omega=\Omega(\boldsymbol{\mu})$ be a parameterized domain. We suppose that $\Omega$ is a curved polygonal with the same number $n$ of edges. Let each edge $\Gamma_ {i}, i=1, \ldots, n$ be parameterized trough the parameter $\mu \in \mathcal{D}$ by a bijective map $\psi_ {i}:[0,1] \times \mathcal{D} \rightarrow \Gamma_ {i}$ such that $\boldsymbol{\psi}_ {i}(1, \boldsymbol{\mu})=\boldsymbol{x}_ {i}$, where $\boldsymbol{x}_ {i}$ denotes the vertex shared by $\Gamma_ {i}$ and $\Gamma_ {i+1}$, and $\boldsymbol{\psi}_ {i}(0, \boldsymbol{\mu})=\boldsymbol{x}_ {i-1}$, where $\boldsymbol{x}_ {i-1}$ denotes the vertex shared by $\Gamma_ {i}$ and $\Gamma_ {i-1}$. We denote by $\tilde{\boldsymbol{x}}$ a generic point of the reference domain $\tilde{\Omega}$ and by $\boldsymbol{x}$ a generic point of the parameterized domain $\Omega$. The transfinite map proposed is defined as:
 $$
-\boldsymbol{T}(\tilde{\boldsymbol{x}}, \boldsymbol{\mu})=\sum_ {i=1}^{N}\left[\phi_{i}(\tilde{\boldsymbol{x}}) \boldsymbol{\psi}_ {i}\left(\pi_{i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu} \right)-\phi_{i}(\tilde{\boldsymbol{x}}) \phi_{i+1}(\tilde{\boldsymbol{x}}) \boldsymbol{x}_ {i}\right] .
+\boldsymbol{T}(\tilde{\boldsymbol{x}}, \boldsymbol{\mu})=\sum_ {i=1}^{N}\left[\phi_ {i}(\tilde{\boldsymbol{x}}) \boldsymbol{\psi}_ {i}\left(\pi_ {i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu} \right)-\phi_ {i}(\tilde{\boldsymbol{x}}) \phi_ {i+1}(\tilde{\boldsymbol{x}}) \boldsymbol{x}_ {i}\right] .
 $$
-The advantage of such a map is that for each parameterized domain $\Omega(\boldsymbol{\mu})$, we need only to compute the boundary expressions $\boldsymbol{\psi}_{i}\left(\pi_{i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu}\right)$ and to perform the linear combination.
+The advantage of such a map is that for each parameterized domain $\Omega(\boldsymbol{\mu})$, we need only to compute the boundary expressions $\boldsymbol{\psi}_ {i}\left(\pi_ {i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu}\right)$ and to perform the linear combination.
 
 ## Boundary displacement-dependent transfinite maps
 
@@ -58,9 +58,9 @@ The basic idea of the Boundary Displacement-Dependent Transfinite Map $(B D D T 
 $$
 \boldsymbol{d}_ {i}(t, \boldsymbol{\mu})=\boldsymbol{\psi}_ {i}(t, \boldsymbol{\mu}) - \tilde{\boldsymbol{\psi}}_ {i}(t)
 $$
-If $\tilde{x}$ is a generic point in the reference domain $\tilde{\Omega}$,  The idea of the BDD TM is to displace it through the quantity $\tilde{\boldsymbol{x}}+\sum_ {i=1}^{N} \phi_{i}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}\left(\pi_{i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu}\right) .$ As in the previous map, in every term we have to subtract a correction term, which is, in this case, $\phi_{i}(\tilde{\boldsymbol{x}}) \phi_{i+1}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}(1, \boldsymbol{\mu})$, such that the BDD Transfinite Map is defined as:
+If $\tilde{x}$ is a generic point in the reference domain $\tilde{\Omega}$,  The idea of the BDD TM is to displace it through the quantity $\tilde{\boldsymbol{x}}+\sum_ {i=1}^{N} \phi_ {i}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}\left(\pi_ {i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu}\right) .$ As in the previous map, in every term we have to subtract a correction term, which is, in this case, $\phi_ {i}(\tilde{\boldsymbol{x}}) \phi_ {i+1}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}(1, \boldsymbol{\mu})$, such that the BDD Transfinite Map is defined as:
 $$
-\boldsymbol{S}(\tilde{\boldsymbol{x}}, \boldsymbol{\mu}) = \tilde{\boldsymbol{x}}+\sum_ {i=1}^{N} \left[\phi_{i}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}\left(\pi_ {i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu}\right)-\phi_ {i}(\tilde{\boldsymbol{x}}) \phi_ {i+1}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}(1, \boldsymbol{\mu})\right]
+\boldsymbol{S}(\tilde{\boldsymbol{x}}, \boldsymbol{\mu}) = \tilde{\boldsymbol{x}}+\sum_ {i=1}^{N} \left[\phi_ {i}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}\left(\pi_ {i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu}\right)-\phi_ {i}(\tilde{\boldsymbol{x}}) \phi_ {i+1}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}(1, \boldsymbol{\mu})\right]
 $$
 
 ### Conclusion
