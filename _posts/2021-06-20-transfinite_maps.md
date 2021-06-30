@@ -43,9 +43,11 @@ $$
 ### Online stage
 
 Let $\Omega=\Omega(\boldsymbol{\mu})$ be a parameterized domain. We suppose that $\Omega$ is a curved polygonal with the same number $n$ of edges. Let each edge $\Gamma_ {i}, i=1, \ldots, n$ be parameterized trough the parameter $\mu \in \mathcal{D}$ by a bijective map $\psi_ {i}:[0,1] \times \mathcal{D} \rightarrow \Gamma_ {i}$ such that $\boldsymbol{\psi}_ {i}(1, \boldsymbol{\mu})=\boldsymbol{x}_ {i}$, where $\boldsymbol{x}_ {i}$ denotes the vertex shared by $\Gamma_ {i}$ and $\Gamma_ {i+1}$, and $\boldsymbol{\psi}_ {i}(0, \boldsymbol{\mu})=\boldsymbol{x}_ {i-1}$, where $\boldsymbol{x}_ {i-1}$ denotes the vertex shared by $\Gamma_ {i}$ and $\Gamma_ {i-1}$. We denote by $\tilde{\boldsymbol{x}}$ a generic point of the reference domain $\tilde{\Omega}$ and by $\boldsymbol{x}$ a generic point of the parameterized domain $\Omega$. The transfinite map proposed is defined as:
+
 $$
 \boldsymbol{T}(\tilde{\boldsymbol{x}}, \boldsymbol{\mu})=\sum_ {i=1}^{N}[\phi_ {i}(\tilde{\boldsymbol{x}}) \boldsymbol{\psi}_ {i}(\pi_ {i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu})-\phi_ {i}(\tilde{\boldsymbol{x}}) \phi_ {i+1}(\tilde{\boldsymbol{x}}) \boldsymbol{x}_ {i}].
 $$
+
 The advantage of such a map is that for each parameterized domain $\Omega(\boldsymbol{\mu})$, we need only to compute the boundary expressions $\boldsymbol{\psi}_ {i}\left(\pi_ {i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu}\right)$ and to perform the linear combination.
 
 ## Boundary displacement-dependent transfinite maps
