@@ -68,7 +68,7 @@ In our numerical tests, we employ the squared reference domain shown on the righ
 
 ## 3.Numerical results
 
-![](https://leopardpan.github.io/images/readme/img1.png)
+![](https://suifeng2020.github.io/images/posts/Parametrized_PDE/img1.png)
 
-![](http://suifeng2020.github.io/images/posts/Parametrized_PDE/2.png)
+![](https://SuiFeng2020.github.io/images/posts/Parametrized_PDE/img2.png)
 
