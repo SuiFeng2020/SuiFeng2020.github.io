@@ -19,7 +19,7 @@ The idea behind the transfinite maps (TMs) is to deform the interior points of t
 
 For each side of the reference domain, we associate one weight function $\varphi_i$ with one projection function $\pi_ {i}$ .For a domain with $n$ sides, we have to solve $2n$ elliptic problems; however, these computations are independent of the deformation (and so of the parameter $\mu$ ) and they could be included in the offline stage (computed just once) to guarantee computational efficiency.
 
-![](http://suifeng2020.github.io\images\posts\tansfinite_maps\1.png)
+![](https://suifeng2020.github.io/images/posts/tansfinite_maps/img1.png)
 
 $$
 \left\{\begin{array}{ll}
@@ -65,11 +65,11 @@ $$
 
 ### Conclusion
 
-![](http://suifeng2020.github.io\images\posts\tansfinite_maps\2.png)
+![](https://suifeng2020.github.io/images/posts/tansfinite_maps/img2.png)
 
-![](http://suifeng2020.github.io\images\posts\tansfinite_maps\3.png)
+![](http://suifeng2020.github.io/images/posts/tansfinite_maps/img3.png)
 
-![](http://suifeng2020.github.io\images\posts\tansfinite_maps\4.png)
+![](http://suifeng2020.github.io/images/posts/tansfinite_maps/img4.png)
 
 We can observe that in both cases the meshes deformed by the BDD TM are much more regular and there is no overlapping between the triangles of the mesh. In particular, with the BDD TM, the position of the domain in the Cartesian coordinate plane does not affect the effectiveness of the map. Moreover, the new proposed map allows us to deal with more complex parameterizations of the domain and consequently bigger deformations of the geometry without producing any overlapping phenomena between the triangles of a mesh defined in the domain. 
 
