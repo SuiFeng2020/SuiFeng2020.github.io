@@ -500,7 +500,7 @@ $$
 $$
 \boldsymbol{A}^{k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k} \widetilde{\boldsymbol{R}}_ {k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k}\left(\widetilde{r}_ {11}^{(k)} \boldsymbol{e}_ {1}\right)=\widetilde{r}_ {11}^{(k)} \widetilde{\boldsymbol{q}}_ {1}^{(k)}
 $$
-注意到 $\left\| \widetilde{\boldsymbol{q}}_ {1}^ {(k)}\right\|_ {2}=1, \widetilde{r}_ {11}^ {(k)} \neq 0$ (因矩阵 $A$ 非奇异 )。从而 $\left|\widetilde{r}_ {11}^ {(k)}\right|=\left\| A^ {k} e_ {1} \right\|_ {2}$。于是，根据幂法的收敛性，有
+注意到 $\Vert \widetilde{\boldsymbol{q}}_ {1}^ {(k)}\Vert_ {2}=1, \widetilde{r}_ {11}^ {(k)} \neq 0$ (因矩阵 $A$ 非奇异 )。从而 $\vert \widetilde{r}_ {11}^ {(k)}\vert =\Vert A^ {k} e_ {1} \Vert_ {2}$。于是，根据幂法的收敛性，有
 $$
 \lim _ {k \rightarrow \infty} \widetilde{\boldsymbol{q}}_ {1}^{(k)}=\lim _ {k \rightarrow \infty} \frac{\boldsymbol{A}^{k} \boldsymbol{e}_ {1}}{\widetilde{r}_ {11}^{(k)}}=\boldsymbol{z}_ {1}
 $$
