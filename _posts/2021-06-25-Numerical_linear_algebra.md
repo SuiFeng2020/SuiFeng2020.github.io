@@ -6,8 +6,7 @@ description: "数值代数考试复习"
 tag: learning
 ---
 
-
-> #### 1. Gram-Schmidt正交化的修正策略
+#### 1. Gram-Schmidt正交化的修正策略
 
 (标准 Gram-Schmidt 正交化) 给定 $n \times m(m \leqslant$$n)$ 阶列满秩矩阵 $\boldsymbol{X}=\left[\boldsymbol{x}_ {1}, \boldsymbol{x}_ {2}, \cdots, \boldsymbol{x}_ {m}\right]$, 本算法产 生 $n \times m$ 阶正交矩阵 $\boldsymbol{Q}=\left[\boldsymbol{q}_ {1}, \boldsymbol{q}_ {2}, \cdots, \boldsymbol{q}_ {m}\right]$和 $m \times m$ 阶非奇异上三角矩阵 $\boldsymbol{R}=\left(r_ {i k}\right)$.
 
@@ -31,7 +30,7 @@ $$
 
 在不考虑舍入误差时，上述计算结果 $\widetilde{\boldsymbol{q}}$ 与算法 中第 4 行的 $\widetilde{\boldsymbol{q}}$ 是相同的。修正的 Gram-Schmidt 正交化利用了最新的 $\widetilde{\boldsymbol{q}}$，有助于减少舍入误差影响。
 
-> #### 2. Arnoldi分解和Lanczos分解的区别
+#### 2. Arnoldi分解和Lanczos分解的区别
 
 给定矩阵$\boldsymbol{A} \in \mathbb{R}^{n\times n}$ 和向量 $\boldsymbol{v} \in \mathbb{R}^n$ , 设 $\boldsymbol{K}_ {k+1}(\boldsymbol{A}, \boldsymbol{v})=\left[\boldsymbol{v}, \boldsymbol{A} \boldsymbol{v}, \cdots, \boldsymbol{A}^{k} \boldsymbol{v}\right] 
 $是列满秩的，并假定它的
@@ -70,16 +69,16 @@ $$
 
 称上式为一个长度为 $k$ 的 Lanczos 分解。因此，Lanczos 分解是 Arnoldi 的特殊情形。
 
-> ### 3. 投影方法的基本框架
+### 3. 投影方法的基本框架
 
 投影方法的基本框架为：
-step 1, 选取一对子空间 $\mathcal{K}$ 和 $\mathcal{L} .$
-step 2, 选取 $\mathcal{K}$ 和 $\mathcal{L}$ 的基 $\boldsymbol{V}=\left[\boldsymbol{v}_ {1}, \cdots, \boldsymbol{v}_ {m}\right]$ 和 $\boldsymbol{W}=\left[\boldsymbol{w}_ {1}, \cdots, \boldsymbol{w}_ {m}\right] .$
-step 3, 计算残差 $\boldsymbol{r}=\boldsymbol{b}-\boldsymbol{A} \boldsymbol{x} .$
-step 4, 解方程组 $\boldsymbol{W}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{V} \boldsymbol{y}=\boldsymbol{W}^{\mathrm{T}} \boldsymbol{r}$ 得到 $\boldsymbol{y}$.
+step 1, 选取一对子空间 $\mathcal{K}$ 和 $\mathcal{L} .$  
+step 2, 选取 $\mathcal{K}$ 和 $\mathcal{L}$ 的基 $\boldsymbol{V}=\left[\boldsymbol{v}_ {1}, \cdots, \boldsymbol{v}_ {m}\right]$ 和 $\boldsymbol{W}=\left[\boldsymbol{w}_ {1}, \cdots, \boldsymbol{w}_ {m}\right] .$  
+step 3, 计算残差 $\boldsymbol{r}=\boldsymbol{b}-\boldsymbol{A} \boldsymbol{x} .$  
+step 4, 解方程组 $\boldsymbol{W}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{V} \boldsymbol{y}=\boldsymbol{W}^{\mathrm{T}} \boldsymbol{r}$ 得到 $\boldsymbol{y}$.  
 step 5, 计算近似解 $\boldsymbol{x}:=\boldsymbol{x}+\boldsymbol{V} \boldsymbol{y}$.
 
-> ### 4. 3阶矩阵的Householder变换和Givens变换
+### 4. 3阶矩阵的Householder变换和Givens变换
 
 习题1. 设
 
@@ -93,7 +92,7 @@ $$
 
 利用 Householder 变换求 $\boldsymbol{A}$ 的 $\mathrm{QR}$ 分解。
 
-解：$\boldsymbol{s}_1 = [0,1,0]^{\top}$,  $e_1 = [1, 0, 0]^{\top}$,  $c_1 = -\mathrm{sgn}(a_ {11})\Vert s_1 \Vert = 1$, $u_1 = s_1-c_1e_1 = [-1,1,0]^{\top}$,
+解：$\boldsymbol{s}_ 1 = [0,1,0]^ {\top}$,  $e_1 = [1, 0, 0]^ {\top}$,  $c_1 = -\mathrm{sgn}(a_ {11})\Vert s_1 \Vert = 1$, $u_1 = s_1 - c_1 e_1 = [-1,1,0]^ {\top}$,
 
 $$
 \boldsymbol{H}_1 = I - 2\frac{u_1 u_1^{\top}}{u_1^{\top}u_1} =
@@ -124,7 +123,7 @@ A_1 = H_1A =\left[\begin{array}{ccc}
 \end{array}\right]
 $$
 
-$\boldsymbol{s}_2 = [0,4,3]^{\top}$($H_2A_1$ 不改变 $A_1$ 的第一行)，$e_2 = [0, 1, 0]^{\top}$,  $c_2 = -\mathrm{sgn}(a_ {22})\Vert s_2 \Vert = -5$,  $u_2 = s_2-c_2e_2 = [0,9,3]^{\top}$, 
+$\boldsymbol{s} _2 = [0,4,3]^ {\top}$($H_2A_1$ 不改变 $A_1$ 的第一行)，$e_2 = [0, 1, 0]^ {\top}$,  $c_2 = -\mathrm{sgn}(a_ {22})\Vert s_2 \Vert = -5$,  $u_2 = s_2-c_2e_2 = [0,9,3]^ {\top}$, 
 
 $$
 H_2 = I - 2\frac{u_2 u_2^{\top}}{u_2^{\top}u_2} =
@@ -252,7 +251,7 @@ $$
 
 满足 $A=QR$。
 
-> ### 5. HSS迭代中参数$\alpha$与特征值分布
+### 5. HSS迭代中参数$\alpha$与特征值分布
 
 **命题1.** 设 $A \in \mathbb{C}^{n \times n}$ 为正定矩阵, $\boldsymbol{H}=\frac{1}{2}\left(\boldsymbol{A}+\boldsymbol{A}^{\mathrm{H}}\right)$ 和$S=\frac{1}{2}\left(\boldsymbol{A}-\boldsymbol{A}^{\mathrm{H}}\right)$ 为其 Hermite 和反 Hermite 部分, 且 $\alpha$ 是一个正常数. 则 $\mathrm{HSS}$ 迭代矩阵 $\boldsymbol{M}(\alpha)$ 为
 
@@ -274,9 +273,10 @@ $$
 
 即 $\mathrm{HSS}$ 迭代收敘到线性方程组 $\boldsymbol{Ax}=\boldsymbol{b}$ 的唯一解 $\boldsymbol{x}^{*} \in \mathbb{C}^{n} .$
 
-> 证明
+**证明**
 
 记
+
 $$
 \boldsymbol{M}_ {1}=\alpha \boldsymbol{I}+\boldsymbol{H}, \boldsymbol{N}_ {1}=\alpha \boldsymbol{I}-\boldsymbol{S}, \boldsymbol{M}_ {2}=\alpha \boldsymbol{I}+\boldsymbol{S}, \boldsymbol{N}_ {2}=\alpha \boldsymbol{I}-\boldsymbol{H}
 $$
@@ -324,7 +324,7 @@ $$
 
 式中: $\kappa(\boldsymbol{H})=\lambda_ {\max } / \lambda_ {\min }$ 为 $\boldsymbol{H}$ 的谱条件数。
 
-> 证明
+**证明**
 
 对任意的 $\alpha>0$, 函数 $f(\lambda)=\frac{\alpha-\lambda}{\alpha+\lambda}$ 关于 $\lambda$ 是单调递减的 $\left(f^{\prime}(\lambda)=-2 \alpha /(\alpha+\lambda)^2<0\right)$, 故有
 
@@ -332,21 +332,21 @@ $$
 \sigma(\alpha)=\max \left\{\left|\frac{\alpha-\lambda_ {\min }}{\alpha+\lambda_ {\min }}\right|,\left|\frac{\alpha-\lambda_ {\max }}{\alpha+\lambda_ {\max }}\right|\right\}.
 $$
 
-若 $\alpha^{*}$ 是 $\sigma(\alpha)$ 的极小点，则必有 $\alpha^{*}=\lambda_ {\min }>0$， $\alpha^{*}-\lambda_ {\max }<0$,
+若 $\alpha^ {*}$ 是 $\sigma(\alpha)$ 的极小点，则必有 $\alpha^ {*}=\lambda_ {\min }>0$， $\alpha^ {*}-\lambda_ {\max }<0$,
 
 $$
-\frac{\alpha^{*}-\lambda_ {\min }}{\alpha^{*}+\lambda_ {\min }}=-\frac{\alpha^{*}-\lambda_ {\max }}{\alpha^{*}+\lambda_ {\max }}
+\frac{\alpha^ {*}-\lambda_ {\min }}{\alpha^ {*} + \lambda_ {\min }}=-\frac{\alpha^{*}-\lambda_ {\max }}{\alpha {*}+\lambda_ {\max }}
 $$
 
 从上式解得
 
 $$
-\alpha^{*}=\sqrt{\lambda_ {\min } \lambda_ {\max }}
+\alpha^ {*}=\sqrt{\lambda_ {\min } \lambda_ {\max }}
 $$
 
 从而推论的结论成立。
 
-> ### 6. 迭代法的外推思想
+### 6. 迭代法的外推思想
 
 使用迭代格式求解方程组 $\boldsymbol{Ax}=\boldsymbol{b}$ 时，迭代过程可能收敛，也可能不收敛。我们希望找到一种改进方法，使得不收敛的格式变得收敛，收敛慢的格式变得收敛快。
 
@@ -372,18 +372,18 @@ $$
 
 所以，不管 $\gamma \neq 0$ 如何选取，当迭代格式 $\eqref{eq1}$ 收敛时，它必定收敛到原来方程组 $\boldsymbol{x}=\boldsymbol{B} \boldsymbol{x}+\boldsymbol{f}$ 的解。因此希望选取一个比较好的参数 $\gamma$，使得迭代格式 $\eqref{eq1}$ 收敛得尽可能快。这就是外推法。
 
-> ### 7. 广义极小参量法（GMRES）
+### 7. 广义极小参量法（GMRES）
 
 广义极小残量法 $(\mathrm{GMRES})$ ：
-(1) 令 $\boldsymbol{v}_ {1}=\boldsymbol{r}_ {0} /\left\|\boldsymbol{r}_ {0}\right\|_ {2}$，产生一个长度为 $k$ 的 Arnoldi 分解 $\boldsymbol{A} \boldsymbol{V}_ {k}=\boldsymbol{V}_ {k} \boldsymbol{H}_ {k}+\beta_ {k} \boldsymbol{v}_ {k+1} \boldsymbol{e}_ {k}^{\mathrm{T}}=\boldsymbol{V}_ {k+1} \widetilde{\boldsymbol{H}}_ {k+1, k}$
-(2) 利用 Givens 变换求 $\widetilde{\boldsymbol{H}}_ {k+1, k}$ 的 QR 分解 $\left(\boldsymbol{G}_ {k} \boldsymbol{G}_ {k-1} \cdots \boldsymbol{G}_ {2} \boldsymbol{G}_ {1}\right) \widetilde{\boldsymbol{H}}_ {k+1, k}=\left[\begin{array}{c}\boldsymbol{R}_ {k} \\ \mathbf{0}\end{array}\right]$并按式$\left\{\begin{array}{l}\tau_ {1}=\beta c_ {1} \\ \tau_ {i}=(-1)^{i-1} \beta s_ {1} s_ {2} \cdots s_ {i-1} c_ {i}, \quad i=2,3, \cdots, k \\ \rho_ {k}=(-1)^{k} \beta s_ {1} s_ {2} \cdots s_ {k}\end{array}\right.$ 求得向量 $\boldsymbol{t}_ {k}$ 和数 $\rho_ {k} .$
-(3) 用回代法求解上三角方程组 $\boldsymbol{R}_ {k} \boldsymbol{z}_ {k}=\boldsymbol{t}_ {k}$, 得 $\boldsymbol{z}_ {k} .$
-$(4)$ 计算 $\boldsymbol{x}_ {k}=\boldsymbol{x}_ {0}+\boldsymbol{V}_ {k} \boldsymbol{z}_ {k} .$
+(1) 令 $\boldsymbol{v}_ {1}=\boldsymbol{r}_ {0} /\left\|\boldsymbol{r}_ {0}\right\|_ {2}$，产生一个长度为 $k$ 的 Arnoldi 分解 $\boldsymbol{A} \boldsymbol{V}_ {k}=\boldsymbol{V}_ {k} \boldsymbol{H}_ {k}+\beta_ {k} \boldsymbol{v}_ {k+1} \boldsymbol{e}_ {k}^{\mathrm{T}}=\boldsymbol{V}_ {k+1} \widetilde{\boldsymbol{H}}_ {k+1, k}$  
+(2) 利用 Givens 变换求 $\widetilde{\boldsymbol{H}}_ {k+1, k}$ 的 QR 分解 $\left(\boldsymbol{G}_ {k} \boldsymbol{G}_ {k-1} \cdots \boldsymbol{G}_ {2} \boldsymbol{G}_ {1}\right) \widetilde{\boldsymbol{H}}_ {k+1, k}=\left[\begin{array}{c}\boldsymbol{R}_ {k} \\ \mathbf{0}\end{array}\right]$并按式 $\left \{ \begin{array}{l}\tau_ {1}=\beta c_ {1} \\ \tau_ {i}=(-1)^ {i-1} \beta s_ {1} s_ {2} \cdots s_ {i-1} c_ {i}, \quad i=2,3, \cdots, k \\ \rho_ {k}=(-1)^{k} \beta s_ {1} s_ {2} \cdots s_ {k}\end{array}\right.$ 求得向量 $\boldsymbol{t}_ {k}$ 和数 $\rho_ {k} .$  
+(3) 用回代法求解上三角方程组 $\boldsymbol{R}_ {k} \boldsymbol{z}_ {k}=\boldsymbol{t}_ {k}$, 得 $\boldsymbol{z}_ {k} .$  
+(4) 计算 $\boldsymbol{x}_ {k}=\boldsymbol{x}_ {0}+\boldsymbol{V}_ {k} \boldsymbol{z}_ {k} .$  
 (5) 若 $\left|\rho_ {k}\right| / \beta<\varepsilon($ 事先给定的误差界 $)$，则终止；否则增加 $k$ 的值，重复上面的过程。
 
 > 重启技术是为了节省计算机内存，预处理技术是为了使系数矩阵的谱相对集中，从而加快速度。
 
-> ### 8. BCGSTAB方法避免残差震荡，保持下降的修正策略
+### 8. BCGSTAB方法避免残差震荡，保持下降的修正策略
 
 $\mathrm{BCGSTAB}$ 方法是为了改进 $\mathrm{CGS}$ 方法之残量的范数剧烈抖动而提出的。这一方法的基本思想是 $\mathrm{CGS}$ 方法的残量 $\boldsymbol{r}_ {k}^{\mathrm{CGS}}$ 满足
 
@@ -407,7 +407,7 @@ $$
 
 式中: $\omega_ {k+1}$ 为待定参数。BCGSTAB 方法正是利用这一参数的可选择性来改进相对残差范数的振荡性。
 
-> ### 9. 线性最小二乘问题的等价形式
+### 9. 线性最小二乘问题的等价形式
 
 设 $A \in \mathbb{C}^{m \times n}, \boldsymbol{b} \in \mathbb{C}^{m}$, 确定 $\boldsymbol{x} \in \mathbb{C}^{n}$ 使得
 
@@ -430,7 +430,7 @@ $$
 \boldsymbol{A}^{\mathrm{H}} \boldsymbol{A} \boldsymbol{x}=\boldsymbol{A}^{\mathrm{H}} \boldsymbol{b} \label{eq3} \tag{3}
 $$
 
-的解，其中式 $\eqref{eq3}$ 称为最小二乘问题的法方程。
+的解，其中式 $\eqref{eq3}$ 称为最小二乘问题的法方程。  
 **证明**：最小二乘问题 $\eqref{eq2}$ 等价于极小化问题
 
 $$
@@ -461,7 +461,7 @@ $$
 \end{array}\right] {eq4} \tag{4}
 $$
 
-的解。上述线性系统称为最小二乘问题的KKT 方程。
+的解。上述线性系统称为最小二乘问题的KKT 方程。  
 **证明** ：若 $x$ 为最小二乘问题 $\eqref{eq2}$ 的极小解，而 $\boldsymbol{r}=\boldsymbol{b}-\boldsymbol{A} \boldsymbol{x}$ 为 其残量，则
 
 $$
@@ -495,7 +495,7 @@ $$
 
 式中: $\boldsymbol{y} \in \mathbb{C}^{m}, \boldsymbol{z} \in \mathbb{C}^{n}$ 为任意向量。故满足式 $\eqref{eq4}$ 的任一组向量 $\boldsymbol{x}, \boldsymbol{r}$ 分别为式 $\eqref{eq4}$ 的极小解和残量。证毕。
 
-> ### 10. 求解LS问题的QR方法
+### 10. 求解LS问题的QR方法
 
 本节考虑最小二乘问题 $\eqref{eq2}$ 中的矩阵 $A \in \mathbb{R}^{m \times n}(m \geqslant n)$ 的情形。根据正交矩阵保持向量 2 范数不变的性质，对于任意的正交矩阵 $Q \in \mathbb{R}^{m \times m}$，最小二乘问题 $\eqref{eq2}$ 等价于
 
@@ -506,7 +506,7 @@ $$
 
 这样, 就可望通过适当选取正交矩阵 $Q$，使原问题 $\eqref{eq2}$ 转化为较为容易求解的最小二乘问题 $\eqref{eq5}$ ，这就是正交化方法一 $\mathrm{QR}$ 分解方法的基本思想。
 
-> ### 11. 求矩阵特征值的基本QR方法下三角矩阵趋于0
+### 11. 求矩阵特征值的基本QR方法下三角矩阵趋于0
 
 **定理1** 设对称矩阵 $A \in \mathbb{R}^{n \times n}$ 满足
 
@@ -520,19 +520,19 @@ $$
 \boldsymbol{e}_ {1}=(1,0, \cdots, 0)^{\mathrm{T}}=\sum_ {i=1}^{n} \alpha_ {i} \boldsymbol{x}_ {i}
 $$
 
-中的 $\alpha_ {1} \neq 0$，那么由算法 $7.5$ 生成的矩阵序列 $\left\{\boldsymbol{A}_ {k}\right\}$ 具有收敛性质
+中的 $\alpha_ {1} \neq 0$，那么由算法 $7.5$ 生成的矩阵序列 $\left \{ \boldsymbol{A}_ {k} \right \}$ 具有收敛性质
 
 $$
 \lim _ {k \rightarrow \infty} \boldsymbol{A}_ {k} \boldsymbol{e}_ {1}=\lambda_ {1} \boldsymbol{e}_ {1}
 $$
 
-**证明**：证明 记 $\widetilde{Q}_ {k}$ 的第 1 列为 $\widetilde{\boldsymbol{q}}_ {1}^{(k)}=\widetilde{\boldsymbol{Q}}_ {k} \boldsymbol{e}_ {1}$，$\widetilde{\boldsymbol{R}}_ {k}$ 的第 1 个对角元为$\widetilde{r}_ {11}^{(k)}$，则由式 $(7.52)$ 可知
+**证明**：记 $\widetilde{Q}_ {k}$ 的第 1 列为 $\widetilde{\boldsymbol{q}}_ {1}^{(k)}=\widetilde{\boldsymbol{Q}}_ {k} \boldsymbol{e}_ {1}$，$\widetilde{\boldsymbol{R}}_ {k}$ 的第 1 个对角元为$\widetilde{r}_ {11}^{(k)}$，则由式 $(7.52)$ 可知
 
 $$
 \boldsymbol{A}^{k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k} \widetilde{\boldsymbol{R}}_ {k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k}\left(\widetilde{r}_ {11}^{(k)} \boldsymbol{e}_ {1}\right)=\widetilde{r}_ {11}^{(k)} \widetilde{\boldsymbol{q}}_ {1}^{(k)}
 $$
 
-注意到 $\left\|\widetilde{\boldsymbol{q}}_ {1}^{(k)}\right\|_ {2}=1, \widetilde{r}_ {11}^{(k)} \neq 0$ (因矩阵 $A$ 非奇异 )。从而 $\left|\widetilde{r}_ {11}^{(k)}\right|=$$\mid A^{k} e_ {1} \|_ {2}$。于是，根据幂法的收敛性，有
+注意到 $\left \|\widetilde{\boldsymbol{q}}_ {1}^ {(k)}\right\|_ {2}=1, \widetilde{r}_ {11}^ {(k)} \neq 0$ (因矩阵 $A$ 非奇异 )。从而 $\left|\widetilde{r}_ {11}^ {(k)}\right|=$$\mid A^ {k} e_ {1} \|_ {2}$。于是，根据幂法的收敛性，有
 
 $$
 \lim _ {k \rightarrow \infty} \widetilde{\boldsymbol{q}}_ {1}^{(k)}=\lim _ {k \rightarrow \infty} \frac{\boldsymbol{A}^{k} \boldsymbol{e}_ {1}}{\widetilde{r}_ {11}^{(k)}}=\boldsymbol{z}_ {1}
@@ -646,7 +646,7 @@ $$
 
 因为 $\widehat{\boldsymbol{Q}}_ {k}^{-1} \boldsymbol{R} \boldsymbol{\Lambda} \boldsymbol{R}^{-1} \widehat{\boldsymbol{Q}}_ {k} \rightarrow \boldsymbol{R} \boldsymbol{\Lambda} \boldsymbol{R}^{-1} \equiv \overline{\boldsymbol{R}}($ 上三角矩阵 $)$，所以 $\boldsymbol{A}_ {k}$ 的对角线以下元素收敛于 $0$。因为 $D_ {1}^{k}$ 可能不收敛，故 $\boldsymbol{A}_ {k}$ 基本收敛 于 $\overline{\boldsymbol{R}}$。证毕。
 
-> ### 12. Krylov子空间求大规模特征值问题的思想
+### 12. Krylov子空间求大规模特征值问题的思想
 
 设 $(\lambda, \boldsymbol{x})$ 是矩阵 $\boldsymbol{A}$ 的一个特征对，即
 
@@ -680,7 +680,7 @@ $$
 
 这就是用 Krylov 子空间方法求解大规模特征值问题的基本思想。
 
-> ### 13. 数值代数理论基础
+### 13. 数值代数理论基础
 
 **1.正定矩阵定义**
 
