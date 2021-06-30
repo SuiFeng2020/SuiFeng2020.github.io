@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  Transfinite maps
-description: "超限映射"
 date:   2021-06-20 
+description: "超限映射"
 tag: literature reading
 ---
 
@@ -17,8 +17,6 @@ tag: literature reading
         });
     </script>
 </head>
-
-# Transfinite maps
 
 ## Abstract
 

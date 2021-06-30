@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  Numerical linear algebra
+date: 2021-06-25
 description: "数值代数考试复习"
-date: 2021-06-25 
 tag: learning
 ---
 <head>

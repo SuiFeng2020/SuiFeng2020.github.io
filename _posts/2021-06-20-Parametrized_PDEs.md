@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  Parametrized PDEs
-description: "参数化偏微分方程"
 date:   2021-06-20 
+description: "参数化偏微分方程"
 tag:  literature reading
 ---
 <head>
