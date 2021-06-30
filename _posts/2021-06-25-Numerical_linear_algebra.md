@@ -388,36 +388,28 @@ $$
 ### 8. BCGSTAB方法避免残差震荡，保持下降的修正策略
 
 $\mathrm{BCGSTAB}$ 方法是为了改进 $\mathrm{CGS}$ 方法之残量的范数剧烈抖动而提出的。这一方法的基本思想是 $\mathrm{CGS}$ 方法的残量 $\boldsymbol{r}_ {k}^{\mathrm{CGS}}$ 满足
-
 $$
 \boldsymbol{r}_ {k}^{\mathrm{CGS}}=\varphi_ {k}(\boldsymbol{A}) \boldsymbol{r}_ {k}^{\mathrm{BCG}}=\varphi_ {k}^{2}(\boldsymbol{A}) \boldsymbol{r}_ {0}
 $$
-
 可以考虑不用多项式 $\varphi_ {k}$，而是选择一个其他的 $k$ 次多项式 $\widetilde{\varphi}_ {k}$，使
-
 $$
 \boldsymbol{r}_ {k}=\widetilde{\varphi}_ {k}(\boldsymbol{A}) \boldsymbol{r}_ {k}^{\mathrm{BCG}}=\widetilde{\varphi}_ {k}(\boldsymbol{A}) \varphi_ {k}(\boldsymbol{A}) \boldsymbol{r}_ {0}
 $$
-
 以期待这样选取的相对残差范数 $\left\|\boldsymbol{r}_ {k}\right\|_ {2} /\left\|\boldsymbol{r}_ {0}\right\|_ {2}$ 的振荡性有所改进。
 
 一种选择 $\widetilde{\varphi}_ {k}$ 的方法是根据递推公式
-
 $$
 \widetilde{\varphi}_ {0}(t)=1, \quad \widetilde{\varphi}_ {k+1}(t)=\left(1-\omega_ {k+1} t\right) \widetilde{\varphi}_ {k}(t)
 $$
-
 式中: $\omega_ {k+1}$ 为待定参数。BCGSTAB 方法正是利用这一参数的可选择性来改进相对残差范数的振荡性。
 
 ### 9. 线性最小二乘问题的等价形式
 
 设 $A \in \mathbb{C}^{m \times n}, \boldsymbol{b} \in \mathbb{C}^{m}$, 确定 $\boldsymbol{x} \in \mathbb{C}^{n}$ 使得
-
 $$
 \|\boldsymbol{A} \boldsymbol{x}-\boldsymbol{b}\|_ {2}=\min _ {\boldsymbol{z} \in \mathbb{C}^{n}}\|\boldsymbol{A} \boldsymbol{z}-\boldsymbol{b}\|_ {2} \label{eq2}
 \tag{2}
 $$
-
 问题 $\eqref{eq2}$ 称为线性最小二乘问题 $($ Least Squares, $\mathrm{LS}$ 问题 $)$，而 $\boldsymbol{x}$ 则称为最小二乘解或极小解。称 $\boldsymbol{r}(\boldsymbol{x})=\boldsymbol{b}-\boldsymbol{A} \boldsymbol{x}$ 为残差向量 ，简称残量。
 
 > $Ax=b$ 有解 $\iff$ $AA^{+}b=b$，通解 $x=A^{+}b + (I-A^{+}A)z$，唯一极小范数解 $x_ {0}=A^{+}b$，
@@ -427,29 +419,22 @@ $$
 ***法方程***
 
 $\boldsymbol{x}$ 是最小二乘问题 $\eqref{eq2}$ 的极小解，即 $x \in S_ {\mathrm{LS}}$ 的充分必要条件是 $\boldsymbol{x}$ 为方程
-
 $$
 \boldsymbol{A}^{\mathrm{H}} \boldsymbol{A} \boldsymbol{x}=\boldsymbol{A}^{\mathrm{H}} \boldsymbol{b} \label{eq3} \tag{3}
 $$
-
 的解，其中式 $\eqref{eq3}$ 称为最小二乘问题的法方程。  
 **证明**：最小二乘问题 $\eqref{eq2}$ 等价于极小化问题
-
 $$
 \min \varphi(\boldsymbol{x})=\frac{1}{2}\|\boldsymbol{A} \boldsymbol{x}-\boldsymbol{b}\|_ {2}^{2}=\frac{1}{2} \boldsymbol{x}^{\mathrm{H}}\left(\boldsymbol{A}^{\mathrm{H}} \boldsymbol{A}\right) \boldsymbol{x}-\left(\boldsymbol{b}^{\mathrm{H}} \boldsymbol{A}\right) \boldsymbol{x}+\frac{1}{2}\|\boldsymbol{b}\|_ {2}^{2}
 $$
-
 由于 $\boldsymbol{A}^{\mathrm{H}} \boldsymbol{A} \in \mathbb{C}^{n \times n}$ 是半正定矩阵，因此 $n$ 元实函数 $\varphi(\boldsymbol{x})$ 是凸函数，故 $x$ 是最小二乘问题 $\eqref{eq2}$ 的极小解等价于
-
 $$
 \nabla \varphi(\boldsymbol{x})=\boldsymbol{A}^{\mathrm{H}}(\boldsymbol{A} \boldsymbol{x}-\boldsymbol{b})=\mathbf{0}
 $$
-
 ***KKT方程***
 
 设 $A \in \mathbb{C}^{m \times n}$，$\boldsymbol{b} \in \mathbb{R}^{n}$。则 $\boldsymbol{x}$ 和 $\boldsymbol{r}=\boldsymbol{b}-\boldsymbol{A} \boldsymbol{x}$ 分别为最小二乘问题 $\eqref{eq2}$ 的极小解和残量的充分必要条件是 $x$ 和$\boldsymbol{r}$
 为鞍点系统
-
 $$
 \left[\begin{array}{ll}
 \boldsymbol{I} & \boldsymbol{A} \\
@@ -462,23 +447,17 @@ $$
 \mathbf{0}
 \end{array}\right] \label{eq4} \tag{4}
 $$
-
 的解。上述线性系统称为最小二乘问题的KKT 方程。  
 **证明** ：若 $x$ 为最小二乘问题 $\eqref{eq2}$ 的极小解，而 $\boldsymbol{r}=\boldsymbol{b}-\boldsymbol{A} \boldsymbol{x}$ 为 其残量，则
-
 $$
 x=A^{\dagger} b+\left(I-A^{\dagger} A\right) z, \quad r=b-A x=b-A A^{\dagger} b=\left(I-A A^{\dagger}\right) b
 $$
-
 由广义逆 $A^{\dagger}$ 的性质及等式 $r+A x=b$，得
-
 $$
 \boldsymbol{A}^{\mathrm{H}} \boldsymbol{r}=\boldsymbol{A}^{\mathrm{H}}\left(\boldsymbol{I}-\boldsymbol{A} \boldsymbol{A}^{\dagger}\right) \boldsymbol{b}=\left[\left(\boldsymbol{I}-\boldsymbol{A} \boldsymbol{A}^{\dagger}\right) \boldsymbol{A}\right]^{\mathrm{H}} \boldsymbol{b}=\mathbf{0} .
 $$
-
 故式 $\eqref{eq4}$ 是相容的线性系统，且 $x$ 和 $r$ 满足式 $\eqref{eq4}$。
 反之，通过验证广义逆的四个条件，可以验证
-
 $$
 \boldsymbol{B}^{\dagger} \equiv\left[\begin{array}{cc}
 \boldsymbol{I} & \boldsymbol{A} \\
@@ -488,60 +467,44 @@ A^{\mathrm{H}} & \boldsymbol{O}
 \boldsymbol{A}^{\dagger} & -\boldsymbol{A}^{\dagger}\left(\boldsymbol{A}^{\dagger}\right)^{\mathrm{H}}
 \end{array}\right]
 $$
-
 故式 $\eqref{eq4}$ 的任一解向量 $x, r$ 有如下形式
-
 $$
 \left[\begin{array}{l}r \\ x\end{array}\right]=B^{\dagger}\left[\begin{array}{l}b \\ 0\end{array}\right]+\left(I-B^{\dagger} B\right)\left[\begin{array}{l}y \\ z\end{array}\right]=\left[\begin{array}{c}\left(I-A A^{\dagger}\right) b \\ A^{\dagger} b-\left(I-A^{\dagger} A\right) z\end{array}\right]
 $$
-
 式中: $\boldsymbol{y} \in \mathbb{C}^{m}, \boldsymbol{z} \in \mathbb{C}^{n}$ 为任意向量。故满足式 $\eqref{eq4}$ 的任一组向量 $\boldsymbol{x}, \boldsymbol{r}$ 分别为式 $\eqref{eq4}$ 的极小解和残量。证毕。
 
 ### 10. 求解LS问题的QR方法
 
 本节考虑最小二乘问题 $\eqref{eq2}$ 中的矩阵 $A \in \mathbb{R}^{m \times n}(m \geqslant n)$ 的情形。根据正交矩阵保持向量 2 范数不变的性质，对于任意的正交矩阵 $Q \in \mathbb{R}^{m \times m}$，最小二乘问题 $\eqref{eq2}$ 等价于
-
 $$
 \left\|\boldsymbol{Q}^{\mathrm{T}}(\boldsymbol{A} \boldsymbol{x}-\boldsymbol{b})\right\|_ {2}=\min \left\{\left\|\boldsymbol{Q}^{\mathrm{T}}(\boldsymbol{A} \boldsymbol{z}-\boldsymbol{b})\right\|_ {2}: \boldsymbol{z} \in \mathbb{R}^{n}\right\}
 \label{eq5} \tag{5}
 $$
-
 这样, 就可望通过适当选取正交矩阵 $Q$，使原问题 $\eqref{eq2}$ 转化为较为容易求解的最小二乘问题 $\eqref{eq5}$ ，这就是正交化方法一 $\mathrm{QR}$ 分解方法的基本思想。
 
 ### 11. 求矩阵特征值的基本QR方法下三角矩阵趋于0
 
 **定理1** 设对称矩阵 $A \in \mathbb{R}^{n \times n}$ 满足
-
 $$
 \left|\lambda_ {1}\right|>\left|\lambda_ {2}\right| \geqslant \cdots \geqslant\left|\lambda_ {n}\right|>0
 $$
-
 对应的规范正交化特征向量为 $\boldsymbol{x}_ {1}, \boldsymbol{x}_ {2}, \cdots, \boldsymbol{x}_ {n}$。如果单位坐标向量
-
 $$
 \boldsymbol{e}_ {1}=(1,0, \cdots, 0)^{\mathrm{T}}=\sum_ {i=1}^{n} \alpha_ {i} \boldsymbol{x}_ {i}
 $$
-
 中的 $\alpha_ {1} \neq 0$，那么由算法 $7.5$ 生成的矩阵序列 ${\boldsymbol{A}_ {k}}$ 具有收敛性质
-
 $$
 \lim _ {k \rightarrow \infty} \boldsymbol{A}_ {k} \boldsymbol{e}_ {1}=\lambda_ {1} \boldsymbol{e}_ {1}
 $$
-
 **证明**：记 $\widetilde{Q}_ {k}$ 的第 1 列为 $\widetilde{\boldsymbol{q}}_ {1}^{(k)}=\widetilde{\boldsymbol{Q}}_ {k} \boldsymbol{e}_ {1}$，$\widetilde{\boldsymbol{R}}_ {k}$ 的第 1 个对角元为$\widetilde{r}_ {11}^{(k)}$，则由式 $(7.52)$ 可知
-
 $$
 \boldsymbol{A}^{k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k} \widetilde{\boldsymbol{R}}_ {k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k}\left(\widetilde{r}_ {11}^{(k)} \boldsymbol{e}_ {1}\right)=\widetilde{r}_ {11}^{(k)} \widetilde{\boldsymbol{q}}_ {1}^{(k)}
 $$
-
 注意到 $\left\| \widetilde{\boldsymbol{q}}_ {1}^ {(k)}\right\|_ {2}=1, \widetilde{r}_ {11}^ {(k)} \neq 0$ (因矩阵 $A$ 非奇异 )。从而 $\left|\widetilde{r}_ {11}^ {(k)}\right|=\left\| A^ {k} e_ {1} \right\|_ {2}$。于是，根据幂法的收敛性，有
-
 $$
 \lim _ {k \rightarrow \infty} \widetilde{\boldsymbol{q}}_ {1}^{(k)}=\lim _ {k \rightarrow \infty} \frac{\boldsymbol{A}^{k} \boldsymbol{e}_ {1}}{\widetilde{r}_ {11}^{(k)}}=\boldsymbol{z}_ {1}
 $$
-
 式中：$\boldsymbol{z}_ {1}$ 为矩阵 $\boldsymbol{A}$ 的对应于 $\lambda_ {1}$ 的规范化特征向量 $($ 可以相差一个常数因子 $\pm 1) .$ 进而, 由式 $(7.51)$，可以把 $\boldsymbol{A}_ {k+1}$ 写成
-
 $$
 \begin{aligned}
 \boldsymbol{A}_ {k+1} &=\widetilde{\boldsymbol{Q}}_ {k}^{\mathrm{T}} \boldsymbol{A} \widetilde{\boldsymbol{Q}}_ {k}=\left[\widetilde{\boldsymbol{q}}_ {1}^{(k)}, \widetilde{\boldsymbol{Q}}_ {k-1}\right]^{\mathrm{T}} \boldsymbol{A}\left[\widetilde{\boldsymbol{q}}_ {1}^{(k)}, \widetilde{\boldsymbol{Q}}_ {k-1}\right] \\
@@ -551,135 +514,98 @@ a_ {11}^{(k+1)} & * \\
 \end{array}\right]
 \end{aligned}
 $$
-
 式中：$a_ {11}^{(k+1)}=\left(\widetilde{\boldsymbol{q}}_ {1}^{(k)}\right)^{\mathrm{T}} \boldsymbol{A} \widetilde{\boldsymbol{q}}_ {1}^{(k)}, \boldsymbol{\alpha}^{(k+1)}=\left(\widetilde{\boldsymbol{Q}}_ {k-1}^{(k)}\right)^{\mathrm{T}} \boldsymbol{A} \widetilde{\boldsymbol{q}}_ {1}^{(k)}$。 根据式 $(7.55)$，得
-
 $$
 \lim _ {k \rightarrow \infty} a_ {11}^{(k+1)}=\lim _ {k \rightarrow \infty}\left(\widetilde{\boldsymbol{q}}_ {1}^{(k)}\right)^{\mathrm{T}} \boldsymbol{A} \widetilde{\boldsymbol{q}}_ {1}^{(k)}=\boldsymbol{z}_ {1}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{z}_ {1}=\lambda_ {1}
 $$
-
 故由引理 7.1，得
-
 $$
 \begin{aligned}
 \lim _ {k \rightarrow \infty}\left\|\boldsymbol{\alpha}^{(k+1)}\right\|_ {2} &=\lim _ {k \rightarrow \infty}\left\|\boldsymbol{A} \widetilde{\boldsymbol{q}}_ {1}^{(k)}-\left[\left(\widetilde{\boldsymbol{q}}_ {1}^{(k)}\right)^{\mathrm{T}} \boldsymbol{A} \widetilde{\boldsymbol{q}}_ {1}^{(k)}\right] \widetilde{\boldsymbol{q}}_ {1}^{(k)}\right\|_ {2} \\
 &=\left\|\boldsymbol{A} \boldsymbol{z}_ {1}-\left[\boldsymbol{z}_ {1}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{z}_ {1}\right] \boldsymbol{z}_ {1}\right\|_ {2}=0 .
 \end{aligned}
 $$
-
 因此, $\lim _ {k \rightarrow \infty} \boldsymbol{\alpha}^{(k+1)}=\mathbf{0}$。于是有
-
 $$
 \lim _ {k \rightarrow \infty} \boldsymbol{A}_ {k+1}=\left[\begin{array}{cc}
 \lambda_ {1} & * \\
 \mathbf{0} & *
 \end{array}\right],
 $$
-
 即式 $(7.54)$ 成立。证毕。
 
 **定理2** 设 $\boldsymbol{A}=\boldsymbol{X} \boldsymbol{\Lambda} \boldsymbol{X}^{-1}$，其中 $\boldsymbol{\Lambda}=\operatorname{diag}\left(\lambda_ {1}, \lambda_ {2}, \cdots, \lambda_ {n}\right)$。如果 (1) $\left|\lambda_ {1}\right|>\left|\lambda_ {2}\right|>\cdots>\left|\lambda_ {n}\right|>0$；(2) $\boldsymbol{X}^{-1}$ 具有 LU 分解：$\boldsymbol{X}^{-1}=\boldsymbol{L} \boldsymbol{U}$， 则 $\mathrm{QR}$ 方法基本收敛于上三角矩阵。
 **证明**： 由式 $(7.51)$ 可知，只需分析 $\widetilde{Q}_ {k}$ 的极限情况。而由式 $(7.52)$，只需分析 $A^{k}$ 的极限情况。注意到
-
 $$
 \boldsymbol{A}^{k}=\boldsymbol{X} \boldsymbol{\Lambda}^{k} \boldsymbol{X}^{-1}=\boldsymbol{X} \boldsymbol{\Lambda}^{k} \boldsymbol{L} \boldsymbol{U}=\boldsymbol{X}\left(\boldsymbol{\Lambda}^{k} \boldsymbol{L} \boldsymbol{\Lambda}^{-k}\right) \boldsymbol{\Lambda}^{k} \boldsymbol{U}
 $$
-
 令
-
 $$
 \boldsymbol{\Lambda}^{k} \boldsymbol{L} \boldsymbol{\Lambda}^{-k}=\boldsymbol{I}+\boldsymbol{E}_ {k},
 $$
-
 则
-
 $$
 \boldsymbol{A}^{k}=\boldsymbol{X}\left(\boldsymbol{I}+\boldsymbol{E}_ {k}\right) \boldsymbol{\Lambda}^{k} \boldsymbol{U}
 $$
-
 由于 $L$ 是单位下三角形,，故
-
 $$
 \left(\boldsymbol{E}_ {k}\right)_ {i j}=\left\{\begin{array}{ll}
 0, & i \leqslant j \\
 l_ {i j}\left(\lambda_ {i} / \lambda_ {j}\right)^{k}, & i>j
 \end{array}\right.
 $$
-
 由假设条件 $\mathbb{1}$ 知，$\boldsymbol{E}_ {k} \rightarrow \boldsymbol{O}$ 且 $\left(\boldsymbol{E}_ {k}\right)_ {i j}$ 的收敛速度是 $\left|\lambda_ {i} / \lambda_ {j}\right|$.
 设 $\boldsymbol{X}=Q R$ 且 $R$ 的对角元均为正数，则有
-
 $$
 \begin{aligned}
 \boldsymbol{A}^{k} &=\boldsymbol{Q} \boldsymbol{R}\left(\boldsymbol{I}+\boldsymbol{E}_ {k}\right) \boldsymbol{\Lambda}^{k} \boldsymbol{U} \\
 &=\boldsymbol{Q}\left(\boldsymbol{I}+\boldsymbol{R} \boldsymbol{E}_ {k} \boldsymbol{R}^{-1}\right) \boldsymbol{R} \boldsymbol{\Lambda}^{k} \boldsymbol{U}
 \end{aligned}
 $$
-
 因为 $\boldsymbol{E}_ {k} \rightarrow \boldsymbol{O}(k \rightarrow \infty)$, 故当 $k$ 充分大时， $\boldsymbol{I}+\boldsymbol{R} \boldsymbol{E}_ {k} \boldsymbol{R}^{-1}$ 非奇异，所以有唯一的 QR 分解$\boldsymbol{I}+\boldsymbol{R} \boldsymbol{E}_ {k} \boldsymbol{R}^{-1}=\widehat{\boldsymbol{Q}}_ {k} \widehat{\boldsymbol{R}}_ {k}\left(\widehat{\boldsymbol{R}}_ {k}\right.$ 的对角元为正 $)$，而且当 $k \rightarrow \infty$ 时，$\widehat{\boldsymbol{Q}}_ {k} \rightarrow \boldsymbol{I}, \widehat{\boldsymbol{R}}_ {k} \rightarrow \boldsymbol{I}$。 此时，$\boldsymbol{A}^{k}$ 有如下分解
-
 $$
 \boldsymbol{A}^{k}=\left(\boldsymbol{Q} \widehat{\boldsymbol{Q}}_ {k}\right)\left(\widehat{\boldsymbol{R}}_ {k} \boldsymbol{R} \boldsymbol{\Lambda}^{k} \boldsymbol{U}\right)
 $$
-
 妨碍上式成为 $A^{k}$ 的 $\mathrm{QR}$ 分解的仅仅是上式右端第 2 个因子(上三角矩阵 )​ 的对角元可能非正。为补救这一点，可引入两个对角正交矩阵
-
 $$
 \boldsymbol{D}_ {1}=\operatorname{diag}\left(\frac{\lambda_ {1}}{\left|\lambda_ {1}\right|}, \cdots, \frac{\lambda_ {n}}{\left|\lambda_ {n}\right|}\right), \quad \boldsymbol{D}_ {2}=\operatorname{diag}\left(\frac{\boldsymbol{U}_ {11}}{\left|\boldsymbol{U}_ {11}\right|}, \cdots, \frac{\boldsymbol{U}_ {n n}}{\left|\boldsymbol{U}_ {n n}\right|}\right)
 $$
-
 式中: $\boldsymbol{U}_ {i i}(i=1,2, \cdots, n)$ 为矩阵 $\boldsymbol{U}$ 的对角元。于是
-
 $$
 \boldsymbol{A}^{k}=\left(\left(\boldsymbol{Q} \widehat{\boldsymbol{Q}}_ {k}\right)\left(\boldsymbol{D}_ {2} \boldsymbol{D}_ {1}^{k}\right)\right)\left(\boldsymbol{D}_ {1}^{-k} \boldsymbol{D}_ {2}^{-1} \widehat{\boldsymbol{R}}_ {k} \boldsymbol{R} \boldsymbol{\Lambda}^{k} \boldsymbol{U}\right)
 $$
-
 是 $A^{k}$ 的唯一 QR 分解。从而由式 $(7.51)$，有
-
 $$
 \boldsymbol{A}_ {k+1}=\left(\boldsymbol{Q} \widehat{\boldsymbol{Q}}_ {k} \boldsymbol{D}_ {2} \boldsymbol{D}_ {1}^{k}\right)^{\mathrm{T}} \boldsymbol{A}\left(\boldsymbol{Q} \widehat{\boldsymbol{Q}}_ {k} \boldsymbol{D}_ {2} \boldsymbol{D}_ {1}^{k}\right)
 $$
-
 将 $\boldsymbol{A}=\boldsymbol{X} \boldsymbol{\Lambda} \boldsymbol{X}^{-1}=Q \boldsymbol{R} \boldsymbol{\Lambda} \boldsymbol{R}^{-1} \boldsymbol{Q}^{-1}$ 代入上式，得
-
 $$
 \boldsymbol{A}_ {k+1}=\left(\boldsymbol{D}_ {2} \boldsymbol{D}_ {1}^{k}\right)^{\mathrm{T}}\left(\widehat{\boldsymbol{Q}}_ {k}^{-1} \boldsymbol{R} \boldsymbol{\Lambda} \boldsymbol{R}^{-1} \widehat{\boldsymbol{Q}}_ {k}\right)\left(\boldsymbol{D}_ {2} \boldsymbol{D}_ {1}^{k}\right)
 $$
-
 因为 $\widehat{\boldsymbol{Q}}_ {k}^{-1} \boldsymbol{R} \boldsymbol{\Lambda} \boldsymbol{R}^{-1} \widehat{\boldsymbol{Q}}_ {k} \rightarrow \boldsymbol{R} \boldsymbol{\Lambda} \boldsymbol{R}^{-1} \equiv \overline{\boldsymbol{R}}($ 上三角矩阵 $)$，所以 $\boldsymbol{A}_ {k}$ 的对角线以下元素收敛于 $0$。因为 $D_ {1}^{k}$ 可能不收敛，故 $\boldsymbol{A}_ {k}$ 基本收敛 于 $\overline{\boldsymbol{R}}$。证毕。
 
 ### 12. Krylov子空间求大规模特征值问题的思想
 
 设 $(\lambda, \boldsymbol{x})$ 是矩阵 $\boldsymbol{A}$ 的一个特征对，即
-
 $$
 \boldsymbol{A} \boldsymbol{x}=\lambda \boldsymbol{x} \label{eq6} \tag{6}
 $$
-
 再假定
-
 $$
 \boldsymbol{x}=\boldsymbol{V}_ {k} \boldsymbol{y}+\boldsymbol{v} \approx \boldsymbol{V}_ {k} \boldsymbol{y}
 $$
-
 于是，由式 $\eqref{eq6}$有
-
 $$
 \boldsymbol{A} \boldsymbol{V}_ {k} \boldsymbol{y} \approx \lambda \boldsymbol{V}_ {k} \boldsymbol{y}
 $$
-
 从而有
-
 $$
 \boldsymbol{H}_ {k} \boldsymbol{y}=\boldsymbol{V}_ {k}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{V}_ {k} \boldsymbol{y} \approx \lambda \boldsymbol{y}
 $$
-
 因此，若 $(\lambda, \boldsymbol{y})$ 是 $\boldsymbol{H}_ {k}=\boldsymbol{V}_ {k}^{\mathrm{T}} \boldsymbol{A} \boldsymbol{V}_ {k}$ 的特征对，则可用 $\left(\lambda, \boldsymbol{V}_ {k} \boldsymbol{y}\right)$近似 $A$ 的特征对。这样就将大型特征值问题 $\eqref{eq6}$ 转化为一个小型特征值问题:
-
 $$
 \boldsymbol{H}_ {k} \boldsymbol{y}=\lambda \boldsymbol{y}
 $$
-
 这就是用 Krylov 子空间方法求解大规模特征值问题的基本思想。
 
 ### 13. 数值代数理论基础
@@ -691,35 +617,28 @@ $$
 **2.Schur分解**
 
 设 $A \in \mathbb{C}^{n \times n}$，则存在酉矩阵 $\boldsymbol{P} \in \mathbb{C}^{n \times n}$ 使得
-
 $$
 \boldsymbol{P}^{\mathrm{H}} \boldsymbol{A} \boldsymbol{P}=\boldsymbol{T}
 $$
-
 式中：$\boldsymbol{T}$ 为上三角矩阵，其对角元素是 $\boldsymbol{A}$ 的特征值，而且可以选取 $\boldsymbol{P}$ 使得 $\boldsymbol{T}$ 的对角元可以任意排列。
 
 **3.奇异值定义**
 
 设 $A \in \mathbb{C}_ {r}^{m \times n}(r \geqslant 1)$，记 Hermite 矩阵 $A^{\mathrm{H}} \boldsymbol{A}$ 的 $n$ 个特征值为 $\lambda_ {1} \geqslant \lambda_ {2} \geqslant \cdots \lambda_ {r}>\lambda_ {r+1}=\cdots=\lambda_ {n}=0$，则称
-
 $$
 \sigma_ {i}=\sqrt{\lambda_ {i}}, \quad i=1,2, \cdots, n
 $$
-
 为 $A$ 的奇异值。
 
 **4.奇异值分解定理**
 
 设 $A \in \mathbb{C}_ {r}^{m \times n}$ 的正奇异值为 $\sigma_ {1}, \sigma_ {2}, \cdots, \sigma_ {r}$。则存在 $m$ 阶酉矩阵 $\boldsymbol{U}$ 和 $n$ 阶酉矩阵 $\boldsymbol{V}$，使得
-
 $$
 \boldsymbol{A}=\boldsymbol{U} \boldsymbol{\Sigma} \boldsymbol{V}^{\mathrm{H}}
 $$
-
 式中：$\boldsymbol{\Sigma}$ 为 $m \times n$ 阶对角矩阵，且这里 $\boldsymbol{\Sigma}_ {r}=\operatorname{diag}\left(\sigma_ {1}, \sigma_ {2}, \cdots, \sigma_ {r}\right), \sigma_ {i}>0,1 \leqslant i \leqslant r, r \leqslant \min \{m, n\} $。
 
 **5.矩阵范数**
-
 $$
 \|\boldsymbol{A}\|_ {\mathrm{F}}=\left(\sum_ {i=1}^{m} \sum_ {j=1}^{n}\left|a_ {i j}\right|^{2}\right)^{1 / 2}=
 \left(\sum_ {i=1}^{n} \sigma_ {i}^{2}\right)^{1 / 2}
@@ -728,44 +647,32 @@ $$
 $$
 \|\boldsymbol{A}\|_ {2}=\sigma_ {1}=\sqrt{\lambda_ {\max }\left(\boldsymbol{A}^{\mathrm{H}} \boldsymbol{A}\right)}
 $$
-
 **6.谱半径**
 
 设 $A \in \mathbb{C}^{n \times n}$，其特征值为 $\lambda_ {1}, \lambda_ {2}, \cdots, \lambda_ {n}$，则称
-
 $$
 \rho(\boldsymbol{A})=\max _ {1 \leqslant i \leqslant n}\left|\lambda_ {i}\right|
 $$
-
 为矩阵 $A$ 的谱半径。由上述定义，$\|\boldsymbol{A}\|_ {2}$ 可定义为
-
 $$
 \|\boldsymbol{A}\|_ {2}=\sqrt{\rho\left(\boldsymbol{A}^{\mathrm{H}} \boldsymbol{A}\right)}
 $$
-
 特别地，当 $A$ 为 Hermite 矩阵时，有
-
 $$
 \|\boldsymbol{A}\|_ {2}=\rho(\boldsymbol{A}) .
 $$
-
 $\boldsymbol{A}$ 的谱半径不超过 $\boldsymbol{A}$ 的任何范数，即
-
 $$
 \rho(\boldsymbol{A}) \leqslant\|\boldsymbol{A}\|.
 $$
-
 **7.满秩分解**
 
 设 $A \in \mathbb{C}_ {r}^{m \times n}(r>0)$, 若存在列满秩矩阵 $\boldsymbol{F} \in \mathbb{C}_ {r}^{m \times r}$ 和行满秩矩阵 $G \in \mathbb{C}_ {r}^{r \times n}$，使得 $\boldsymbol{A}=\boldsymbol{F} G$，则称 $\boldsymbol{F} \boldsymbol{G}$ 为 $\boldsymbol{A}$ 的
 一个满秩分解。
-
 $$
 \boldsymbol{A}=\left[\begin{array}{cccc}-1 & 0 & 1 & 2 \\ 1 & 2 & -1 & 1 \\ 2 & 2 & -2 & -1\end{array}\right]
 $$
-
 由
-
 $$
 [\boldsymbol{A}, \boldsymbol{I}]=\left[\begin{array}{ccccccc}
 -1 & 0 & 1 & 2 & 1 & 0 & 0 \\
@@ -777,9 +684,7 @@ $$
 0 & 0 & 0 & 0 & 1 & -1 & 1
 \end{array}\right]
 $$
-
 可知
-
 $$
 \boldsymbol{P}=\left[\begin{array}{lcc}
 1 & 0 & 0 \\
@@ -791,9 +696,7 @@ $$
 -2 & 1 & 1
 \end{array}\right]
 $$
-
 于是有
-
 $$
 \boldsymbol{F}=\left[\begin{array}{cc}
 1 & 0 \\
@@ -804,21 +707,17 @@ $$
 0 & 2 & 0 & 3
 \end{array}\right], \quad \boldsymbol{A}=\boldsymbol{F} \boldsymbol{G}
 $$
-
 **8.矩阵广义逆的计算**
 
 > 设$A$ 的最大秩分解 $A=FG$ ,  则 $\boldsymbol{A}^{\dagger}=\boldsymbol{G}^{\mathrm{H}}\left(\boldsymbol{G}\boldsymbol{G}^{\mathrm{H}}\right)^{-1} \left(\boldsymbol{F}^{\mathrm{H}}\boldsymbol{F}\right)^{-1}\boldsymbol{F}^{\mathrm{H}}$。
 
 已知
-
 $$
 \boldsymbol{A}=\left[\begin{array}{llll}1 & 2 & 1 & 2 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & 1 & 0 \\ 2 & 1 & 2 & 1\end{array}\right]
 $$
-
 求 $\boldsymbol{A}$ 的满秩分解和 $A^{\dagger}$。
 
 解
-
 $$
 \quad \boldsymbol{A}^{\text {初等行变换 }}\left[\begin{array}{llll}1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{array}\right]: c_ {1}=1, c_ {2}=2
 $$
@@ -826,9 +725,7 @@ $$
 $$
 \boldsymbol{A}=\boldsymbol{F} \boldsymbol{G}: \quad \boldsymbol{F}=\left[\begin{array}{ll}1 & 2 \\ 0 & 1 \\ 1 & 0 \\ 2 & 1\end{array}\right], \quad \boldsymbol{G}=\left[\begin{array}{llll}1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1\end{array}\right]
 $$
-
 因此，有
-
 $$
 \boldsymbol{F}^{\dagger}=\left(\boldsymbol{F}^{\mathrm{T}} \boldsymbol{F}\right)^{-1} \boldsymbol{F}^{\mathrm{T}}=\left[\begin{array}{ll}6 & 4 \\ 4 & 6\end{array}\right]^{-1} \boldsymbol{F}^{\mathrm{T}}=\frac{1}{10}\left[\begin{array}{cccc}-1 & -2 & 3 & 4 \\ 4 & 3 & -2 & -1\end{array}\right]
 $$
