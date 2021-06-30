@@ -3,7 +3,7 @@ layout: post
 title:  Parametrized PDEs
 description: "参数化偏微分方程"
 date:   2021-06-20 
-tag:  "文献阅读"
+tag:  literature reading
 ---
 <head>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

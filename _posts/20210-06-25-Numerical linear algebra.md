@@ -3,7 +3,7 @@ layout: post
 title:  Numerical linear algebra
 description: "数值代数考试复习"
 date: 2021-06-25 
-tag: "学习"
+tag: learning
 ---
 <head>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

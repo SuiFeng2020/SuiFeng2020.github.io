@@ -3,7 +3,7 @@ layout: post
 title:  Transfinite maps
 description: "超限映射"
 date:   2021-06-20 
-tag: "文献阅读"
+tag: literature reading
 ---
 
 <head>
