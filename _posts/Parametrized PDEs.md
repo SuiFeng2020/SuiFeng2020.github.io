@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Transfinite maps
+title:  Parametrized PDEs
 description: 参数化偏微分方程
 date:   2021-06-20 
 tag:  文献阅读

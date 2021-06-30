@@ -1,1 +1,1 @@
-[github.SuiFeng2020.](https://github.com/SuiFeng2020/SuiFeng2020.github.io)
+[SuiFeng2020/SuiFeng2020.github.io](https://suifeng2020.github.io/)
