@@ -121,7 +121,7 @@ A_1 = H_1A =\left[\begin{array}{ccc}
 \end{array}\right]
 $$
 
-$\boldsymbol{s} _2 = [0,4,3]^ {\top}$，($H_2A_1$ 不改变 $A_1$ 的第一行)，$e_2 = [0, 1, 0]^ {\top}$,  $c_2 = -\mathrm{sgn}(a_ {22})\Vert s_2 \Vert = -5$,  $u_2 = s_2-c_2e_2 = [0,9,3]^ {\top}$, 
+$\boldsymbol{s}_ 2 = [0,4,3]^ {\top}$，($H_2A_1$ 不改变 $A_1$ 的第一行)，$e_2 = [0, 1, 0]^ {\top}$,  $c_2 = -\mathrm{sgn}(a_ {22})\Vert s_2 \Vert = -5$,  $u_2 = s_2-c_2e_2 = [0,9,3]^ {\top}$, 
 
 $$
 H_2 = I - 2\frac{u_2 u_2^{\top}}{u_2^{\top}u_2} =
@@ -374,7 +374,11 @@ $$
 
 广义极小残量法 $(\mathrm{GMRES})$ ：
 (1) 令 $\boldsymbol{v}_ {1}=\boldsymbol{r}_ {0} /\left\|\boldsymbol{r}_ {0}\right\|_ {2}$，产生一个长度为 $k$ 的 Arnoldi 分解 $\boldsymbol{A} \boldsymbol{V}_ {k}=\boldsymbol{V}_ {k} \boldsymbol{H}_ {k}+\beta_ {k} \boldsymbol{v}_ {k+1} \boldsymbol{e}_ {k}^{\mathrm{T}}=\boldsymbol{V}_ {k+1} \widetilde{\boldsymbol{H}}_ {k+1, k}$  
-(2) 利用 Givens 变换求 $\widetilde{\boldsymbol{H}}_ {k+1, k}$ 的 QR 分解 $\left(\boldsymbol{G}_ {k} \boldsymbol{G}_ {k-1} \cdots \boldsymbol{G}_ {2} \boldsymbol{G}_ {1}\right) \widetilde{\boldsymbol{H}}_ {k+1, k}=\left[\begin{array}{c}\boldsymbol{R}_ {k} \\ \mathbf{0}\end{array}\right]$ 并按式 $\left \{ \begin{array}{l} \tau_ {1}=\beta c_ {1} \\ \tau_ {i}=(-1)^ {i-1} \beta s_ {1} s_ {2} \cdots s_ {i-1} c_ {i}, \quad i=2,3, \cdots, k \\ \rho_ {k}=(-1)^{k} \beta s_ {1} s_ {2} \cdots s_ {k} \end{array} \right.$ 求得向量 $\boldsymbol{t}_ {k}$ 和数 $\rho_ {k} .$  
+(2) 利用 Givens 变换求 $\widetilde{\boldsymbol{H}}_ {k+1, k}$ 的 QR 分解 $\left(\boldsymbol{G}_ {k} \boldsymbol{G}_ {k-1} \cdots \boldsymbol{G}_ {2} \boldsymbol{G}_ {1}\right) \widetilde{\boldsymbol{H}}_ {k+1, k}=\left[\begin{array}{c}\boldsymbol{R}_ {k} \\ \mathbf{0}\end{array}\right]$ 并按式 
+
+$$\left \{ \begin{array}{l} \tau_ {1}=\beta c_ {1} \\ \tau_ {i}=(-1)^ {i-1} \beta s_ {1} s_ {2} \cdots s_ {i-1} c_ {i}, \quad i=2,3, \cdots, k \\ \rho_ {k}=(-1)^{k} \beta s_ {1} s_ {2} \cdots s_ {k} \end{array} \right.
+$$
+求得向量 $\boldsymbol{t}_ {k}$ 和数 $\rho_ {k} .$  
 (3) 用回代法求解上三角方程组 $\boldsymbol{R}_ {k} \boldsymbol{z}_ {k}=\boldsymbol{t}_ {k}$, 得 $\boldsymbol{z}_ {k} .$  
 (4) 计算 $\boldsymbol{x}_ {k}=\boldsymbol{x}_ {0}+\boldsymbol{V}_ {k} \boldsymbol{z}_ {k} .$  
 (5) 若 $\left|\rho_ {k}\right| / \beta<\varepsilon($ 事先给定的误差界 $)$，则终止；否则增加 $k$ 的值，重复上面的过程。
@@ -518,7 +522,7 @@ $$
 \boldsymbol{e}_ {1}=(1,0, \cdots, 0)^{\mathrm{T}}=\sum_ {i=1}^{n} \alpha_ {i} \boldsymbol{x}_ {i}
 $$
 
-中的 $\alpha_ {1} \neq 0$，那么由算法 $7.5$ 生成的矩阵序列 $\left\{\boldsymbol{A}_ {k} \right\}$ 具有收敛性质
+中的 $\alpha_ {1} \neq 0$，那么由算法 $7.5$ 生成的矩阵序列 ${\boldsymbol{A}_ {k}}$ 具有收敛性质
 
 $$
 \lim _ {k \rightarrow \infty} \boldsymbol{A}_ {k} \boldsymbol{e}_ {1}=\lambda_ {1} \boldsymbol{e}_ {1}
@@ -530,7 +534,7 @@ $$
 \boldsymbol{A}^{k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k} \widetilde{\boldsymbol{R}}_ {k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k}\left(\widetilde{r}_ {11}^{(k)} \boldsymbol{e}_ {1}\right)=\widetilde{r}_ {11}^{(k)} \widetilde{\boldsymbol{q}}_ {1}^{(k)}
 $$
 
-注意到 $\left\|\widetilde{\boldsymbol{q}}_ {1}^ {(k)}\right\|_ {2}=1, \widetilde{r}_ {11}^ {(k)} \neq 0$ (因矩阵 $A$ 非奇异 )。从而 $\left|\widetilde{r}_ {11}^ {(k)}\right|=\left\| A^ {k} e_ {1} \right\|_ {2}$。于是，根据幂法的收敛性，有
+注意到 $\left\| \widetilde{\boldsymbol{q}}_ {1}^ {(k)}\right\|_ {2}=1, \widetilde{r}_ {11}^ {(k)} \neq 0$ (因矩阵 $A$ 非奇异 )。从而 $\left|\widetilde{r}_ {11}^ {(k)}\right|=\left\| A^ {k} e_ {1} \right\|_ {2}$。于是，根据幂法的收敛性，有
 
 $$
 \lim _ {k \rightarrow \infty} \widetilde{\boldsymbol{q}}_ {1}^{(k)}=\lim _ {k \rightarrow \infty} \frac{\boldsymbol{A}^{k} \boldsymbol{e}_ {1}}{\widetilde{r}_ {11}^{(k)}}=\boldsymbol{z}_ {1}
