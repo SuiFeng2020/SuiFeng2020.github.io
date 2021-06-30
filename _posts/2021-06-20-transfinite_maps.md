@@ -63,6 +63,9 @@ $$
 \boldsymbol{S}(\tilde{\boldsymbol{x}}, \boldsymbol{\mu}) = \tilde{\boldsymbol{x}}+\sum_ {i=1}^{N} \left[\phi_ {i}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}\left(\pi_ {i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu}\right)-\phi_ {i}(\tilde{\boldsymbol{x}}) \phi_ {i+1}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}(1, \boldsymbol{\mu})\right]
 $$
 
+$$
+\boldsymbol{T}(\tilde{\boldsymbol{x}}, \boldsymbol{\mu})=\sum_ {i=1}^{N}\left[\phi_ {i}(\tilde{\boldsymbol{x}}) \boldsymbol{\psi}_ {i}\left(\pi_ {i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu} \right)-\phi_ {i}(\tilde{\boldsymbol{x}}) \phi_ {i+1}(\tilde{\boldsymbol{x}}) \boldsymbol{x}_ {i}\right].
+$$
 
 ### Conclusion
 
