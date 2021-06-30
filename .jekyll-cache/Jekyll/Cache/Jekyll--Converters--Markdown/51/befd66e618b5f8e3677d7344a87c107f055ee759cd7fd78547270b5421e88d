@@ -1,4 +1,4 @@
-I"�<h3 id="1-gram-schmidt正交化的修正策略">1. Gram-Schmidt正交化的修正策略</h3>
+I"��<h3 id="1-gram-schmidt正交化的修正策略">1. Gram-Schmidt正交化的修正策略</h3>
 
 <p>(标准 Gram-Schmidt 正交化) 给定 $n \times m(m \leqslant$$n)$ 阶列满秩矩阵 $\boldsymbol{X}=\left[\boldsymbol{x}_ {1}, \boldsymbol{x}_ {2}, \cdots, \boldsymbol{x}_ {m}\right]$, 本算法产 生 $n \times m$ 阶正交矩阵 $\boldsymbol{Q}=\left[\boldsymbol{q}_ {1}, \boldsymbol{q}_ {2}, \cdots, \boldsymbol{q}_ {m}\right]$和 $m \times m$ 阶非奇异上三角矩阵 $\boldsymbol{R}=\left(r_ {i k}\right)$.</p>
 
@@ -97,7 +97,7 @@ step 5, 计算近似解 $\boldsymbol{x}:=\boldsymbol{x}+\boldsymbol{V} \boldsymb
 0 &amp; 3 &amp; 2
 \end{array}\right]\]
 
-<p>$\boldsymbol{s} <em>2 = [0,4,3]^ {\top}$，($H_2A_1$ 不改变 $A_1$ 的第一行)，$e_2 = [0, 1, 0]^ {\top}$,  $c_2 = -\mathrm{sgn}(a</em> {22})\Vert s_2 \Vert = -5$,  $u_2 = s_2-c_2e_2 = [0,9,3]^ {\top}$,</p>
+<p>$\boldsymbol{s}_ 2 = [0,4,3]^ {\top}$，($H_2A_1$ 不改变 $A_1$ 的第一行)，$e_2 = [0, 1, 0]^ {\top}$,  $c_2 = -\mathrm{sgn}(a_ {22})\Vert s_2 \Vert = -5$,  $u_2 = s_2-c_2e_2 = [0,9,3]^ {\top}$,</p>
 
 \[H_2 = I - 2\frac{u_2 u_2^{\top}}{u_2^{\top}u_2} =
 \left[\begin{array}{ccc}
@@ -297,7 +297,10 @@ step 5, 计算近似解 $\boldsymbol{x}:=\boldsymbol{x}+\boldsymbol{V} \boldsymb
 
 <p>广义极小残量法 $(\mathrm{GMRES})$ ：
 (1) 令 $\boldsymbol{v}_ {1}=\boldsymbol{r}_ {0} /\left|\boldsymbol{r}_ {0}\right|_ {2}$，产生一个长度为 $k$ 的 Arnoldi 分解 $\boldsymbol{A} \boldsymbol{V}_ {k}=\boldsymbol{V}_ {k} \boldsymbol{H}_ {k}+\beta_ {k} \boldsymbol{v}_ {k+1} \boldsymbol{e}_ {k}^{\mathrm{T}}=\boldsymbol{V}_ {k+1} \widetilde{\boldsymbol{H}}_ {k+1, k}$<br />
-(2) 利用 Givens 变换求 $\widetilde{\boldsymbol{H}}_ {k+1, k}$ 的 QR 分解 $\left(\boldsymbol{G}_ {k} \boldsymbol{G}_ {k-1} \cdots \boldsymbol{G}_ {2} \boldsymbol{G}_ {1}\right) \widetilde{\boldsymbol{H}}_ {k+1, k}=\left[\begin{array}{c}\boldsymbol{R}_ {k} \ \mathbf{0}\end{array}\right]$ 并按式 $\left { \begin{array}{l} \tau_ {1}=\beta c_ {1} \ \tau_ {i}=(-1)^ {i-1} \beta s_ {1} s_ {2} \cdots s_ {i-1} c_ {i}, \quad i=2,3, \cdots, k \ \rho_ {k}=(-1)^{k} \beta s_ {1} s_ {2} \cdots s_ {k} \end{array} \right.$ 求得向量 $\boldsymbol{t}_ {k}$ 和数 $\rho_ {k} .$<br />
+(2) 利用 Givens 变换求 $\widetilde{\boldsymbol{H}}_ {k+1, k}$ 的 QR 分解 $\left(\boldsymbol{G}_ {k} \boldsymbol{G}_ {k-1} \cdots \boldsymbol{G}_ {2} \boldsymbol{G}_ {1}\right) \widetilde{\boldsymbol{H}}_ {k+1, k}=\left[\begin{array}{c}\boldsymbol{R}_ {k} \ \mathbf{0}\end{array}\right]$ 并按式</p>
+
+<p>\(\left \{ \begin{array}{l} \tau_ {1}=\beta c_ {1} \\ \tau_ {i}=(-1)^ {i-1} \beta s_ {1} s_ {2} \cdots s_ {i-1} c_ {i}, \quad i=2,3, \cdots, k \\ \rho_ {k}=(-1)^{k} \beta s_ {1} s_ {2} \cdots s_ {k} \end{array} \right.\)
+求得向量 $\boldsymbol{t}_ {k}$ 和数 $\rho_ {k} .$<br />
 (3) 用回代法求解上三角方程组 $\boldsymbol{R}_ {k} \boldsymbol{z}_ {k}=\boldsymbol{t}_ {k}$, 得 $\boldsymbol{z}_ {k} .$<br />
 (4) 计算 $\boldsymbol{x}_ {k}=\boldsymbol{x}_ {0}+\boldsymbol{V}_ {k} \boldsymbol{z}_ {k} .$<br />
 (5) 若 $\left|\rho_ {k}\right| / \beta&lt;\varepsilon($ 事先给定的误差界 $)$，则终止；否则增加 $k$ 的值，重复上面的过程。</p>
@@ -375,9 +378,11 @@ step 5, 计算近似解 $\boldsymbol{x}:=\boldsymbol{x}+\boldsymbol{V} \boldsymb
 
 \[x=A^{\dagger} b+\left(I-A^{\dagger} A\right) z, \quad r=b-A x=b-A A^{\dagger} b=\left(I-A A^{\dagger}\right) b\]
 
-<p>由广义逆 $A^{\dagger}$ 的性质及等式 $r+A x=b$，得</p>
+<p>由广义逆 $A^{\dagger}$ 的性质及等式 $r+A x=b$，得
+$$</p>
 
-\[\boldsymbol{A}^{\mathrm{H}} \boldsymbol{r}=\boldsymbol{A}^{\mathrm{H}}\left(\boldsymbol{I}-\boldsymbol{A} \boldsymbol{A}^{\dagger}\right) \boldsymbol{b}=\left[\left(\boldsymbol{I}-\boldsymbol{A} \boldsymbol{A}^{\dagger}\right) \boldsymbol{A}\right]^{\mathrm{H}} \boldsymbol{b}=\mathbf{0} .\]
+<p>\boldsymbol{A}^{\mathrm{H}} \boldsymbol{r}=\boldsymbol{A}^{\mathrm{H}}\left(\boldsymbol{I}-\boldsymbol{A} \boldsymbol{A}^{\dagger}\right) \boldsymbol{b}=\left[\left(\boldsymbol{I}-\boldsymbol{A} \boldsymbol{A}^{\dagger}\right) \boldsymbol{A}\right]^{\mathrm{H}} \boldsymbol{b}=\mathbf{0} .
+$$</p>
 
 <p>故式 $\eqref{eq4}$ 是相容的线性系统，且 $x$ 和 $r$ 满足式 $\eqref{eq4}$。
 反之，通过验证广义逆的四个条件，可以验证</p>
@@ -415,7 +420,7 @@ A^{\mathrm{H}} &amp; \boldsymbol{O}
 
 \[\boldsymbol{e}_ {1}=(1,0, \cdots, 0)^{\mathrm{T}}=\sum_ {i=1}^{n} \alpha_ {i} \boldsymbol{x}_ {i}\]
 
-<p>中的 $\alpha_ {1} \neq 0$，那么由算法 $7.5$ 生成的矩阵序列 $\left{\boldsymbol{A}_ {k} \right}$ 具有收敛性质</p>
+<p>中的 $\alpha_ {1} \neq 0$，那么由算法 $7.5$ 生成的矩阵序列 ${\boldsymbol{A}_ {k}}$ 具有收敛性质</p>
 
 \[\lim _ {k \rightarrow \infty} \boldsymbol{A}_ {k} \boldsymbol{e}_ {1}=\lambda_ {1} \boldsymbol{e}_ {1}\]
 
@@ -423,15 +428,7 @@ A^{\mathrm{H}} &amp; \boldsymbol{O}
 
 \[\boldsymbol{A}^{k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k} \widetilde{\boldsymbol{R}}_ {k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k}\left(\widetilde{r}_ {11}^{(k)} \boldsymbol{e}_ {1}\right)=\widetilde{r}_ {11}^{(k)} \widetilde{\boldsymbol{q}}_ {1}^{(k)}\]
 
-<table>
-  <tbody>
-    <tr>
-      <td>注意到 $\left|\widetilde{\boldsymbol{q}}_ {1}^ {(k)}\right|_ {2}=1, \widetilde{r}_ {11}^ {(k)} \neq 0$ (因矩阵 $A$ 非奇异 )。从而 $\left</td>
-      <td>\widetilde{r}_ {11}^ {(k)}\right</td>
-      <td>=\left| A^ {k} e_ {1} |_ {2}$。于是，根据幂法的收敛性，有</td>
-    </tr>
-  </tbody>
-</table>
+<p>注意到 $\Vert \widetilde{\boldsymbol{q}}_ {1}^ {(k)}\Vert_ {2}=1, \widetilde{r}_ {11}^ {(k)} \neq 0$ (因矩阵 $A$ 非奇异 )。从而 $\vert \widetilde{r}_ {11}^ {(k)}\vert =\Vert A^ {k} e_ {1} \Vert_ {2}$。于是，根据幂法的收敛性，有</p>
 
 \[\lim _ {k \rightarrow \infty} \widetilde{\boldsymbol{q}}_ {1}^{(k)}=\lim _ {k \rightarrow \infty} \frac{\boldsymbol{A}^{k} \boldsymbol{e}_ {1}}{\widetilde{r}_ {11}^{(k)}}=\boldsymbol{z}_ {1}\]
 
@@ -478,7 +475,7 @@ a_ {11}^{(k+1)} &amp; * \\
 
 \[\boldsymbol{A}^{k}=\boldsymbol{X}\left(\boldsymbol{I}+\boldsymbol{E}_ {k}\right) \boldsymbol{\Lambda}^{k} \boldsymbol{U}\]
 
-<p>由于 $L$ 是单位下三角形,，故</p>
+<p>由于 $L$ 是单位下三角形，故</p>
 
 \[\left(\boldsymbol{E}_ {k}\right)_ {i j}=\left\{\begin{array}{ll}
 0, &amp; i \leqslant j \\

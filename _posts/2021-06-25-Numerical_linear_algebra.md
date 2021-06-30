@@ -471,8 +471,8 @@ x=A^{\dagger} b+\left(I-A^{\dagger} A\right) z, \quad r=b-A x=b-A A^{\dagger} b=
 $$
 
 由广义逆 $A^{\dagger}$ 的性质及等式 $r+A x=b$，得
-$$
 
+$$
 \boldsymbol{A}^{\mathrm{H}} \boldsymbol{r}=\boldsymbol{A}^{\mathrm{H}}\left(\boldsymbol{I}-\boldsymbol{A} \boldsymbol{A}^{\dagger}\right) \boldsymbol{b}=\left[\left(\boldsymbol{I}-\boldsymbol{A} \boldsymbol{A}^{\dagger}\right) \boldsymbol{A}\right]^{\mathrm{H}} \boldsymbol{b}=\mathbf{0} .
 $$
 
@@ -728,6 +728,7 @@ $$
 $$
 \|\boldsymbol{A}\|_ {2}=\sigma_ {1}=\sqrt{\lambda_ {\max }\left(\boldsymbol{A}^{\mathrm{H}} \boldsymbol{A}\right)}
 $$
+
 **6.谱半径**
 
 设 $A \in \mathbb{C}^{n \times n}$，其特征值为 $\lambda_ {1}, \lambda_ {2}, \cdots, \lambda_ {n}$，则称
