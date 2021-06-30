@@ -1,0 +1,15 @@
+I"�<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+<blockquote>
+  <h4 id="1-gram-schmidt正交化的修正策略">1. Gram-Schmidt正交化的修正策略</h4>
+</blockquote>
+:ET
