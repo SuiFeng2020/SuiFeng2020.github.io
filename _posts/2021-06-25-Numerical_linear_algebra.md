@@ -378,6 +378,7 @@ $$
 
 $$\left \{ \begin{array}{l} \tau_ {1}=\beta c_ {1} \\ \tau_ {i}=(-1)^ {i-1} \beta s_ {1} s_ {2} \cdots s_ {i-1} c_ {i}, \quad i=2,3, \cdots, k \\ \rho_ {k}=(-1)^{k} \beta s_ {1} s_ {2} \cdots s_ {k} \end{array} \right.
 $$
+
 求得向量 $\boldsymbol{t}_ {k}$ 和数 $\rho_ {k} .$  
 (3) 用回代法求解上三角方程组 $\boldsymbol{R}_ {k} \boldsymbol{z}_ {k}=\boldsymbol{t}_ {k}$, 得 $\boldsymbol{z}_ {k} .$  
 (4) 计算 $\boldsymbol{x}_ {k}=\boldsymbol{x}_ {0}+\boldsymbol{V}_ {k} \boldsymbol{z}_ {k} .$  
