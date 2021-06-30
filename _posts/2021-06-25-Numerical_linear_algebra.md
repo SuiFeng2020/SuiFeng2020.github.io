@@ -6,20 +6,18 @@ description: "数值代数考试复习"
 tag: learning
 ---
 
-#### 1. Gram-Schmidt正交化的修正策略
+### 1. Gram-Schmidt正交化的修正策略
 
 (标准 Gram-Schmidt 正交化) 给定 $n \times m(m \leqslant$$n)$ 阶列满秩矩阵 $\boldsymbol{X}=\left[\boldsymbol{x}_ {1}, \boldsymbol{x}_ {2}, \cdots, \boldsymbol{x}_ {m}\right]$, 本算法产 生 $n \times m$ 阶正交矩阵 $\boldsymbol{Q}=\left[\boldsymbol{q}_ {1}, \boldsymbol{q}_ {2}, \cdots, \boldsymbol{q}_ {m}\right]$和 $m \times m$ 阶非奇异上三角矩阵 $\boldsymbol{R}=\left(r_ {i k}\right)$.
 
 $r_ {11}=\left\|\boldsymbol{x}_ {1}\right\|_ {2} ; \boldsymbol{q}_ {1}=\boldsymbol{x}_ {1} / r_ {11}$
 
-for $k=2: m$
-
+for $k=2: m$  
 $\begin{aligned}
-&\text { for }(i=1: k-1), r_ {i k}=\left(\boldsymbol{x}_ {k}, \boldsymbol{q}_ {i}\right) ; \text { end } \\
-&\widetilde{\boldsymbol{q}}=\boldsymbol{x}_ {k}-\sum_ {i=1}^{k-1} r_ {i k} \boldsymbol{q}_ {i} \\
-&r_ {k k}=\|\widetilde{\boldsymbol{q}}\|_ {2} ; \boldsymbol{q}_ {k}=\widetilde{\boldsymbol{q}} / r_ {k k}
-\end{aligned}$
-
+    &\text{ for }(i=1: k-1), r_ {i k}=\left(\boldsymbol{x}_ {k}, \boldsymbol{q}_ {i}\right) ; \text { end } \\
+    &\widetilde{\boldsymbol{q}}=\boldsymbol{x}_ {k}-\sum_ {i=1}^{k-1} r_ {i k} \boldsymbol{q}_ {i} \\
+    &r_ {k k}=\|\widetilde{\boldsymbol{q}}\|_ {2} ; \boldsymbol{q}_ {k}=\widetilde{\boldsymbol{q}} / r_ {k k}
+\end{aligned}$  
 end
 
 可以看出，当 $\boldsymbol{x}_ {k}$ 与前面的 $\boldsymbol{x}_ {i}$ 接近线性相关时，$r_ {k k}$将接近于 0，用它作分母会导致很大的舍入误差 ，$\boldsymbol{q}_ {i}$ 之间很快失去了正交性。一种改进就是修正的 Gram-Schmidt 交化。它把算法的第 3 行和第 4 行修改为下面的循环:
@@ -30,7 +28,7 @@ $$
 
 在不考虑舍入误差时，上述计算结果 $\widetilde{\boldsymbol{q}}$ 与算法 中第 4 行的 $\widetilde{\boldsymbol{q}}$ 是相同的。修正的 Gram-Schmidt 正交化利用了最新的 $\widetilde{\boldsymbol{q}}$，有助于减少舍入误差影响。
 
-#### 2. Arnoldi分解和Lanczos分解的区别
+### 2. Arnoldi分解和Lanczos分解的区别
 
 给定矩阵$\boldsymbol{A} \in \mathbb{R}^{n\times n}$ 和向量 $\boldsymbol{v} \in \mathbb{R}^n$ , 设 $\boldsymbol{K}_ {k+1}(\boldsymbol{A}, \boldsymbol{v})=\left[\boldsymbol{v}, \boldsymbol{A} \boldsymbol{v}, \cdots, \boldsymbol{A}^{k} \boldsymbol{v}\right] 
 $是列满秩的，并假定它的
@@ -123,7 +121,7 @@ A_1 = H_1A =\left[\begin{array}{ccc}
 \end{array}\right]
 $$
 
-$\boldsymbol{s} _2 = [0,4,3]^ {\top}$($H_2A_1$ 不改变 $A_1$ 的第一行)，$e_2 = [0, 1, 0]^ {\top}$,  $c_2 = -\mathrm{sgn}(a_ {22})\Vert s_2 \Vert = -5$,  $u_2 = s_2-c_2e_2 = [0,9,3]^ {\top}$, 
+$\boldsymbol{s} _2 = [0,4,3]^ {\top}$，($H_2A_1$ 不改变 $A_1$ 的第一行)，$e_2 = [0, 1, 0]^ {\top}$,  $c_2 = -\mathrm{sgn}(a_ {22})\Vert s_2 \Vert = -5$,  $u_2 = s_2-c_2e_2 = [0,9,3]^ {\top}$, 
 
 $$
 H_2 = I - 2\frac{u_2 u_2^{\top}}{u_2^{\top}u_2} =
@@ -376,7 +374,7 @@ $$
 
 广义极小残量法 $(\mathrm{GMRES})$ ：
 (1) 令 $\boldsymbol{v}_ {1}=\boldsymbol{r}_ {0} /\left\|\boldsymbol{r}_ {0}\right\|_ {2}$，产生一个长度为 $k$ 的 Arnoldi 分解 $\boldsymbol{A} \boldsymbol{V}_ {k}=\boldsymbol{V}_ {k} \boldsymbol{H}_ {k}+\beta_ {k} \boldsymbol{v}_ {k+1} \boldsymbol{e}_ {k}^{\mathrm{T}}=\boldsymbol{V}_ {k+1} \widetilde{\boldsymbol{H}}_ {k+1, k}$  
-(2) 利用 Givens 变换求 $\widetilde{\boldsymbol{H}}_ {k+1, k}$ 的 QR 分解 $\left(\boldsymbol{G}_ {k} \boldsymbol{G}_ {k-1} \cdots \boldsymbol{G}_ {2} \boldsymbol{G}_ {1}\right) \widetilde{\boldsymbol{H}}_ {k+1, k}=\left[\begin{array}{c}\boldsymbol{R}_ {k} \\ \mathbf{0}\end{array}\right]$并按式 $\left \{ \begin{array}{l}\tau_ {1}=\beta c_ {1} \\ \tau_ {i}=(-1)^ {i-1} \beta s_ {1} s_ {2} \cdots s_ {i-1} c_ {i}, \quad i=2,3, \cdots, k \\ \rho_ {k}=(-1)^{k} \beta s_ {1} s_ {2} \cdots s_ {k}\end{array}\right.$ 求得向量 $\boldsymbol{t}_ {k}$ 和数 $\rho_ {k} .$  
+(2) 利用 Givens 变换求 $\widetilde{\boldsymbol{H}}_ {k+1, k}$ 的 QR 分解 $\left(\boldsymbol{G}_ {k} \boldsymbol{G}_ {k-1} \cdots \boldsymbol{G}_ {2} \boldsymbol{G}_ {1}\right) \widetilde{\boldsymbol{H}}_ {k+1, k}=\left[\begin{array}{c}\boldsymbol{R}_ {k} \\ \mathbf{0}\end{array}\right]$ 并按式 $\left \{ \begin{array}{l} \tau_ {1}=\beta c_ {1} \\ \tau_ {i}=(-1)^ {i-1} \beta s_ {1} s_ {2} \cdots s_ {i-1} c_ {i}, \quad i=2,3, \cdots, k \\ \rho_ {k}=(-1)^{k} \beta s_ {1} s_ {2} \cdots s_ {k} \end{array} \right.$ 求得向量 $\boldsymbol{t}_ {k}$ 和数 $\rho_ {k} .$  
 (3) 用回代法求解上三角方程组 $\boldsymbol{R}_ {k} \boldsymbol{z}_ {k}=\boldsymbol{t}_ {k}$, 得 $\boldsymbol{z}_ {k} .$  
 (4) 计算 $\boldsymbol{x}_ {k}=\boldsymbol{x}_ {0}+\boldsymbol{V}_ {k} \boldsymbol{z}_ {k} .$  
 (5) 若 $\left|\rho_ {k}\right| / \beta<\varepsilon($ 事先给定的误差界 $)$，则终止；否则增加 $k$ 的值，重复上面的过程。
@@ -458,7 +456,7 @@ $$
 \end{array}\right]=\left[\begin{array}{l}
 \boldsymbol{b} \\
 \mathbf{0}
-\end{array}\right] {eq4} \tag{4}
+\end{array}\right] \label{eq4} \tag{4}
 $$
 
 的解。上述线性系统称为最小二乘问题的KKT 方程。  
@@ -520,7 +518,7 @@ $$
 \boldsymbol{e}_ {1}=(1,0, \cdots, 0)^{\mathrm{T}}=\sum_ {i=1}^{n} \alpha_ {i} \boldsymbol{x}_ {i}
 $$
 
-中的 $\alpha_ {1} \neq 0$，那么由算法 $7.5$ 生成的矩阵序列 $\left \{ \boldsymbol{A}_ {k} \right \}$ 具有收敛性质
+中的 $\alpha_ {1} \neq 0$，那么由算法 $7.5$ 生成的矩阵序列 $\left\{\boldsymbol{A}_ {k} \right\}$ 具有收敛性质
 
 $$
 \lim _ {k \rightarrow \infty} \boldsymbol{A}_ {k} \boldsymbol{e}_ {1}=\lambda_ {1} \boldsymbol{e}_ {1}
@@ -532,7 +530,7 @@ $$
 \boldsymbol{A}^{k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k} \widetilde{\boldsymbol{R}}_ {k} \boldsymbol{e}_ {1}=\widetilde{\boldsymbol{Q}}_ {k}\left(\widetilde{r}_ {11}^{(k)} \boldsymbol{e}_ {1}\right)=\widetilde{r}_ {11}^{(k)} \widetilde{\boldsymbol{q}}_ {1}^{(k)}
 $$
 
-注意到 $\left \|\widetilde{\boldsymbol{q}}_ {1}^ {(k)}\right\|_ {2}=1, \widetilde{r}_ {11}^ {(k)} \neq 0$ (因矩阵 $A$ 非奇异 )。从而 $\left|\widetilde{r}_ {11}^ {(k)}\right|=$$\mid A^ {k} e_ {1} \|_ {2}$。于是，根据幂法的收敛性，有
+注意到 $\left\|\widetilde{\boldsymbol{q}}_ {1}^ {(k)}\right\|_ {2}=1, \widetilde{r}_ {11}^ {(k)} \neq 0$ (因矩阵 $A$ 非奇异 )。从而 $\left|\widetilde{r}_ {11}^ {(k)}\right|=\left\| A^ {k} e_ {1} \right\|_ {2}$。于是，根据幂法的收敛性，有
 
 $$
 \lim _ {k \rightarrow \infty} \widetilde{\boldsymbol{q}}_ {1}^{(k)}=\lim _ {k \rightarrow \infty} \frac{\boldsymbol{A}^{k} \boldsymbol{e}_ {1}}{\widetilde{r}_ {11}^{(k)}}=\boldsymbol{z}_ {1}
