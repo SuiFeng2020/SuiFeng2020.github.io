@@ -16,16 +16,16 @@ tag:  literature reading
 |                 $\boldsymbol{\mu}_{p h}$                  | $\boldsymbol{\mu}_ {p h} \in \mathscr{P}_ {p h}$, physical parameters, addresses material properties, source terms and boundary conditions |
 |                  $\boldsymbol{\mu}_ {g}$                   | $\boldsymbol{\mu}_ {g} \in \mathscr{P}_ {g}$, geometrical parameter, defines the shape of the computational domain |
 |                    $\boldsymbol{\mu}$                     | $\boldsymbol{\mu}=\left(\boldsymbol{\mu}_{p h}, \boldsymbol{\mu}_{g}\right) \in \mathscr{P}=\mathscr{P}_{p h} \times \mathscr{P}_{g} \subset \mathbb{R}^{P}$, the overall input vector parameter |
-| $\widetilde{\Gamma}_{D}\left(\boldsymbol{\mu}_{g}\right)$ | Dirichlet boundary conditions of $\widetilde{\Omega}\left(\boldsymbol{\mu}_{g}\right)$ |
-| $\widetilde{\Gamma}_{N}\left(\boldsymbol{\mu}_{g}\right)$ | Neumann boundary conditions of $\widetilde{\Omega}\left(\boldsymbol{\mu}_{g}\right)$ |
-|                      $\widetilde{V}$                      | a Hilbert space $\widetilde{V}=\widetilde{V}\left(\boldsymbol{\mu}_{g}\right)=\widetilde{V}\left(\widetilde{\Omega}\left(\boldsymbol{\mu}_{g}\right)\right)$ defined over the domain $\widetilde{\Omega}\left(\boldsymbol{\mu}_{g}\right)$ |
+| $\widetilde{\Gamma}_ {D}\left(\boldsymbol{\mu}_ {g}\right)$ | Dirichlet boundary conditions of $\widetilde{\Omega}\left(\boldsymbol{\mu}_ {g}\right)$ |
+| $\widetilde{\Gamma}_ {N}\left(\boldsymbol{\mu}_ {g}\right)$ | Neumann boundary conditions of $\widetilde{\Omega}\left(\boldsymbol{\mu}_ {g}\right)$ |
+|                      $\widetilde{V}$                      | a Hilbert space $\widetilde{V}=\widetilde{V}\left(\boldsymbol{\mu}_ {g}\right)=\widetilde{V}\left(\widetilde{\Omega}\left(\boldsymbol{\mu}_ {g}\right)\right)$ defined over the domain $\widetilde{\Omega}\left(\boldsymbol{\mu}_ {g}\right)$ |
 |                 $\widetilde{V}^{\prime}$                  |                the dual space of $\tilde{V}$                 |
-|                      $\widetilde{G}$                      | $\widetilde{G}: \widetilde{V} \times \mathscr{P}_{p h} \rightarrow \widetilde{V}^{\prime}$ the map representing a parametrized nonlinear second-order PDE |
-|                          $\Phi$                           | $\Phi: \Omega \times \mathscr{P}_{g} \rightarrow \Omega$ the parametrized map |
+|                      $\widetilde{G}$                      | $\widetilde{G}: \widetilde{V} \times \mathscr{P}_ {p h} \rightarrow \widetilde{V}^{\prime}$ the map representing a parametrized nonlinear second-order PDE |
+|                          $\Phi$                           | $\Phi: \Omega \times \mathscr{P}_ {g} \rightarrow \Omega$ the parametrized map |
 
-​    The differential (strong) form of the problem of interest reads: given $\boldsymbol{\mu}=\left(\boldsymbol{\mu}_{p h}, \boldsymbol{\mu}_{g}\right) \in \mathscr{P}$, find $\widetilde{u}(\boldsymbol{\mu}) \in \widetilde{V}\left(\boldsymbol{\mu}_{g}\right)$ such that
+​    The differential (strong) form of the problem of interest reads: given $\boldsymbol{\mu}=\left(\boldsymbol{\mu}_{p h}, \boldsymbol{\mu}_{g}\right) \in \mathscr{P}$, find $\widetilde{u}(\boldsymbol{\mu}) \in \widetilde{V}\left(\boldsymbol{\mu}_ {g}\right)$ such that
 $$
-\widetilde{G}\left(\widetilde{u}(\boldsymbol{\mu}) ; \boldsymbol{\mu}_{p h}\right)=0 \quad \text { in } \tilde{V}^{\prime}\left(\boldsymbol{\mu}_{g}\right). \tag{1} \label{eq1}
+\widetilde{G}\left(\widetilde{u}(\boldsymbol{\mu}) ; \boldsymbol{\mu}_ {p h}\right)=0 \quad \text { in } \tilde{V}^{\prime}\left(\boldsymbol{\mu}_ {g}\right). \tag{1} \label{eq1}
 $$
 namely
 $$
