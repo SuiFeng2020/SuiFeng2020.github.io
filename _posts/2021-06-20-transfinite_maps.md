@@ -63,6 +63,9 @@ $$
 \boldsymbol{S}(\tilde{\boldsymbol{x}}, \boldsymbol{\mu}) = \tilde{\boldsymbol{x}}+\sum_ {i=1}^{N} \left[\phi_ {i}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}\left(\pi_ {i}(\tilde{\boldsymbol{x}}), \boldsymbol{\mu}\right)-\phi_ {i}(\tilde{\boldsymbol{x}}) \phi_ {i+1}(\tilde{\boldsymbol{x}}) \boldsymbol{d}_ {i}(1, \boldsymbol{\mu})\right]
 $$
 
+$$
+\left(\frac{\sin x}{x^2}-1\right)
+$$
 ### Conclusion
 
 ![](https://suifeng2020.github.io/images/posts/tansfinite_maps/img2.png)
