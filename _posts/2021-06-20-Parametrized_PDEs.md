@@ -13,7 +13,7 @@ tag:  literature reading
 | :-------------------------------------------------------: | :----------------------------------------------------------: |
 |                         $\Omega$                          | $\Omega \subset \mathbb{R}^{2}$, a fixed, parameter-independent domain |
 |                   $\widetilde{\Omega}$                    | $\widetilde{\Omega}=\widetilde{\Omega}\left(\boldsymbol{\mu}_{g}\right) \subset \mathbb{R}^{2}$, the computational domain |
-|                 $\boldsymbol{\mu}_{p h}$                  | $\boldsymbol{\mu}_{p h} \in \mathscr{P}_{p h}$, physical parameters, addresses material properties, source terms and boundary conditions |
+|                 $\boldsymbol{\mu}_{p h}$                  | $\boldsymbol{\mu}_ {p h} \in \mathscr{P}_ {p h}$, physical parameters, addresses material properties, source terms and boundary conditions |
 |                  $\boldsymbol{\mu}_{g}$                   | $\boldsymbol{\mu}_{g} \in \mathscr{P}_{g}$, geometrical parameter, defines the shape of the computational domain |
 |                    $\boldsymbol{\mu}$                     | $\boldsymbol{\mu}=\left(\boldsymbol{\mu}_{p h}, \boldsymbol{\mu}_{g}\right) \in \mathscr{P}=\mathscr{P}_{p h} \times \mathscr{P}_{g} \subset \mathbb{R}^{P}$, the overall input vector parameter |
 | $\widetilde{\Gamma}_{D}\left(\boldsymbol{\mu}_{g}\right)$ | Dirichlet boundary conditions of $\widetilde{\Omega}\left(\boldsymbol{\mu}_{g}\right)$ |
