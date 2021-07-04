@@ -10,15 +10,16 @@ tag: learning
 
 (标准 Gram-Schmidt 正交化) 给定 $n \times m(m \leqslant$$n)$ 阶列满秩矩阵 $\boldsymbol{X}=\left[\boldsymbol{x}_ {1}, \boldsymbol{x}_ {2}, \cdots, \boldsymbol{x}_ {m}\right]$, 本算法产 生 $n \times m$ 阶正交矩阵 $\boldsymbol{Q}=\left[\boldsymbol{q}_ {1}, \boldsymbol{q}_ {2}, \cdots, \boldsymbol{q}_ {m}\right]$和 $m \times m$ 阶非奇异上三角矩阵 $\boldsymbol{R}=\left(r_ {i k}\right)$.
 
-$r_ {11}=\left\|\boldsymbol{x}_ {1}\right\|_ {2} ; \boldsymbol{q}_ {1}=\boldsymbol{x}_ {1} / r_ {11}$
-
-for $k=2: m$  
-$\begin{aligned}
-    &\text{ for }(i=1: k-1), r_ {i k}=\left(\boldsymbol{x}_ {k}, \boldsymbol{q}_ {i}\right) ; \text { end } \\
-    &\widetilde{\boldsymbol{q}}=\boldsymbol{x}_ {k}-\sum_ {i=1}^{k-1} r_ {i k} \boldsymbol{q}_ {i} \\
-    &r_ {k k}=\|\widetilde{\boldsymbol{q}}\|_ {2} ; \boldsymbol{q}_ {k}=\widetilde{\boldsymbol{q}} / r_ {k k}
-\end{aligned}$  
-end
+$$
+\begin{array}{ll}
+& r_ {11} = & \left\|\boldsymbol{x}_ {1}\right\|_ {2} ; \boldsymbol{q}_  {1}=\boldsymbol{x}_ {1} / r_ {11}\\
+&\text{for} & k=2: m \\
+&   &\text{for}(i=1: k-1), r_ {i k}=\left(\boldsymbol{x}_ {k},    \boldsymbol{q}_ {i}\right) ; \text { end }\\
+&   &\widetilde{\boldsymbol{q}}=\boldsymbol{x}_ {k}-\sum_ {i=1}^{k-1} r_ {i k} \boldsymbol{q}_ {i} \\
+&   &r_ {k k}=\|\widetilde{\boldsymbol{q}}\|_ {2} ; \boldsymbol{q}_ {k}=\widetilde{\boldsymbol{q}} / r_ {k k}\\
+&\text{end}&
+\end{array}
+$$
 
 可以看出，当 $\boldsymbol{x}_ {k}$ 与前面的 $\boldsymbol{x}_ {i}$ 接近线性相关时，$r_ {k k}$将接近于 0，用它作分母会导致很大的舍入误差 ，$\boldsymbol{q}_ {i}$ 之间很快失去了正交性。一种改进就是修正的 Gram-Schmidt 交化。它把算法的第 3 行和第 4 行修改为下面的循环:
 
