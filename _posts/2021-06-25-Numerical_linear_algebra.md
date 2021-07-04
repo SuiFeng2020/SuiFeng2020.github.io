@@ -331,7 +331,7 @@ $$
 \sigma(\alpha)=\max \left\{\left|\frac{\alpha-\lambda_ {\min }}{\alpha+\lambda_ {\min }}\right|,\left|\frac{\alpha-\lambda_ {\max }}{\alpha+\lambda_ {\max }}\right|\right\}.
 $$
 
-若 $\alpha^ { * }$ 是 $\sigma(\alpha)$ 的极小点，则必有 $\alpha^ {*}=\lambda_ {\min }>0$， $\alpha^ {*}-\lambda_ {\max }<0$,
+若 $\alpha^ { * }$ 是 $\sigma(\alpha)$ 的极小点，则必有 $\alpha^ { * }=\lambda_ {\min }>0$， $\alpha^ { * }-\lambda_ {\max }<0$,
 
 $$
 \frac{\alpha^ {*}-\lambda_ {\min }}{\alpha^ {*} + \lambda_ {\min }}=-\frac{\alpha^{*}-\lambda_ {\max }}{\alpha {*}+\lambda_ {\max }}
