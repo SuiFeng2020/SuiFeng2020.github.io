@@ -8,15 +8,18 @@ tag: algorithm
 ## 1. 原理简介
 
 一维Maxwell方程组形式如下
+
 $$
 \left\{ \begin{aligned}
 \varepsilon(x) \frac{\partial E}{\partial t}=-\frac{\partial H}{\partial x}\\ \mu(x) \frac{\partial H}{\partial t}=-\frac{\partial E}{\partial x}
 \end{aligned}
 \right. \label{eq1} \tag{1}
 $$
+
 其中 $(E,H)$ 分别表示电场强度和磁场强度，材料参数 $\varepsilon{(x)}$ 与 $\mu{(x)}$ 分别表示介电常数和磁导率。
 
 设边界条件为 $x\in [-1,1]$ 且 $E(-1,t) = E(1,t) =0$，$\varepsilon{(x)}$ 和 $\mu{(x)}$ 在 $x=0$ 处不连续，材料参数为分片常数。为构造离散格式，采用常规方法并寻求近似解 $(E,H)\simeq (E_{h},H_{h})$ 为 $K$ 个局部多项式 $(E_{h}^{k}, H_{h}^{k})$ 的直和
+
 $$
 \left[\begin{array}{c}
 E_{h}^{k}(x, t) \\
@@ -26,7 +29,9 @@ E_{h}^{k}\left(x_{i}^{k}, t\right) \\
 H_{h}^{k}\left(x_{i}^{k}, t\right)
 \end{array}\right] \ell_{i}^{k}(x) \label{eq2} \tag{2}
 $$
+
 将 $\eqref{eq2}$ 式代入 $\eqref{eq1}$ 式，并要求 Maxwell 方程局部满足 DG 方法的强形式，从而得到半离散格式
+
 $$
 \begin{aligned}
 \frac{d \boldsymbol{E}_{h}^{k}}{d t}+\frac{1}{J^{k} \varepsilon^{k}} \mathcal{D}_{r} \boldsymbol{H}_{h}^{k} &=\frac{1}{J^{k} \varepsilon^{k}} \mathcal{M}^{-1}\left[\ell^{k}(x)\left(H_{h}^{k}-H^{*}\right)\right]_{x_{l}^{k}}^{x_{r}^{k}} \\
@@ -41,28 +46,32 @@ $$
 \end{aligned}
 $$
 
-
-
 流量为
+
 $$
 H^{*}=\frac{1}{\{\{Z\}\}}\left(\{\{Z H\}\}+\frac{1}{2} [\![ E ]\!] \right), \quad E^{*}=\frac{1}{\{\{Y\}\}}\left(\{\{Y E\}\}+\frac{1}{2} [\![ H ]\!]\right)
 $$
+
 其中
+
 $$
 Z^{\pm}=\sqrt{\frac{\mu^{\pm}}{\varepsilon^{\pm}}}=\left(Y^{\pm}\right)^{-1}
 $$
+
 从而得到
+
 $$
 \begin{aligned}
 H^{-}-H^{*} &=\frac{1}{2\{\{Z\}\}}\left(Z^{+} [\![ H ]\!] - [\![ E ]\!]\right) \\
 E^{-}-E^{*} &=\frac{1}{2\{\{Y\}\}}\left(Y^{+} [\![ E ]\!]- [\![ H ]\!] \right)
 \end{aligned}
 $$
+
 作为进入半离散格式右端的惩罚项。
 
 ## 2. 数值实现
 
-![](C:\Users\hexiaofeng\Desktop\img1.png)
+![](https://suifeng2020.github.io/images/posts/Discontinuous_Galerkin_method/img1.png)
 
 
 
@@ -591,4 +600,6 @@ E = sin(pi*x).*(x<0); H = zeros(Np,K);
 FinalTime = 10;
 [E,H] = Maxwell1D(E,H,epsilon,mu,FinalTime);
 ```
+### References
+Hesthaven J S, Warburton T. Nodal discontinuous Galerkin methods: algorithms, analysis, and applications[M]. Springer Science & Business Media, 2007.
 
