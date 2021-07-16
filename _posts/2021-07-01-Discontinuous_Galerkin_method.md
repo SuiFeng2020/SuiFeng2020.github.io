@@ -602,4 +602,3 @@ FinalTime = 10;
 ```
 ### References
 Hesthaven J S, Warburton T. Nodal discontinuous Galerkin methods: algorithms, analysis, and applications[M]. Springer Science & Business Media, 2007.
-
