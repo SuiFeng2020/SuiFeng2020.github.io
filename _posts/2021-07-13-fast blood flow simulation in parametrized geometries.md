@@ -25,7 +25,7 @@ $$
 \tau(\mathbf{x})=P(\mathbf{x})+\sum_ {i=1}^{k} \mathbf{w}_ {i} \sigma\left(\left\|\mathbf{x}-\mathbf{X}_ {i}\right\|\right) 
 $$
 
-being $P(\cdot)$ a low-degree polynomial function; ${\left\{ \mathbf{w}_ {i} \right\}}_ {i=1}^ {k}, \mathbf{w}_   {i} \in \mathbb{R}^{2}$, a set of weights corresponding to the ( a priori selected) $k$ control points, whose reference positions are $\left[\mathbf{X}_ {1}, \ldots, \mathbf{X}_ {k}\right]$, a set of distinct points in $\mathbb{R}^{2} ;$ and $\sigma(\cdot)$ a (translated) radially symmetric function. Common choices introduced for modelling $2 \mathrm{D}$ (or three-dimensional (3D)) shapes are, for example
+being $P(\cdot)$ a low-degree polynomial function; $\left { \mathbf{w}_ {i} \right }_ {i=1}^ {k}, \mathbf{w}_   {i} \in \mathbb{R}^{2}$, a set of weights corresponding to the ( a priori selected) $k$ control points, whose reference positions are $\left[\mathbf{X}_ {1}, \ldots, \mathbf{X}_ {k}\right]$, a set of distinct points in $\mathbb{R}^{2} ;$ and $\sigma(\cdot)$ a (translated) radially symmetric function. Common choices introduced for modelling $2 \mathrm{D}$ (or three-dimensional (3D)) shapes are, for example
 
 $$
 \sigma(h)= \begin{cases}\exp \left(-h^{2} / \sigma^{2}\right) & \text { Gaussian, } \\ \left(h^{2}+\gamma^{2}\right)^{1 / 2} & \text { multiquadratic, } \\ h^{\gamma} & \text { power, } \gamma=1,3 \\ h^{2} \log (h) & \text { thin-plate splines. }\end{cases}
