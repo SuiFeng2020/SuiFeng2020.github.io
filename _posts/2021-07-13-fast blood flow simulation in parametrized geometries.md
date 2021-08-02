@@ -2,8 +2,10 @@
 layout: post
 title:  Model reduction techniques for fast blood flow simulation in parametrized geometries
 date:   2021-07-13 
+description: fast blood flow simulation in parametrized geometries
 tag: paper reading
 ---
+
 
 ## Abstract
 
