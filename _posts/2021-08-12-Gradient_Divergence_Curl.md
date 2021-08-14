@@ -21,6 +21,7 @@ $$
 $$
 \operatorname{grad} s=\nabla \cdot s=\nabla s=\frac{\partial s}{\partial x_ {i}}=\frac{\partial s}{\partial x} \mathbf{i}+\frac{\partial s}{\partial y} \mathbf{j}+\frac{\partial s}{\partial z} \mathbf{k}
 $$
+
 可以看出标量场的梯度是一个矢量场，它表示 $s$ 在空间某一位置沿某一方向的变化量。 如果想要的到 $s$ 在某一特定方向 $\mathbf{e}_ {l}$ （方向 $l$ 上的单位矢量 $)$ 上的梯度，即方向导 数，则可以根据矢量点乘的几何意义来进行计算：
 
 $$
@@ -49,11 +50,12 @@ $$
 
 上式代表了梯度的散度，可以看出标量经过拉普拉斯算子运算以后仍然是标量。
 矢量的散度为标量，因此对该标量可以继续求梯度：
+
 $$
 \nabla \cdot(\nabla \cdot \mathbf{v})=\nabla^{2} \mathbf{v}=\nabla^{2} u_ {i}=\left(\nabla^{2} u\right) \mathbf{i}+\left(\nabla^{2} v\right) \mathbf{j}+\left(\nabla^{2} w\right) \mathbf{k}
 $$
 
-## 3、旋度（curl)
+## 4、旋度（curl)
 
 旋度是由 $\nabla$ 与矢量的叉乘得到，它的运算结果是一个矢量，代表了矢量做旋转运动的 方向和强度：
 
