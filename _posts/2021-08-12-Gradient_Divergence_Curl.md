@@ -16,13 +16,13 @@ $$
 
 ## 2、梯度（Gradient)
 
-当 $\nabla$ 作用于标量 $s$ 时即可得到该标量在空间中的梯度，下面列出了CFD中梯度的各种 表达形式:
+当 $\nabla$ 作用于标量 $s$ 时即可得到该标量在空间中的梯度，下面列出了CFD中梯度的各种表达形式:
 
 $$
 \operatorname{grad} s=\nabla \cdot s=\nabla s=\frac{\partial s}{\partial x_ {i}}=\frac{\partial s}{\partial x} \mathbf{i}+\frac{\partial s}{\partial y} \mathbf{j}+\frac{\partial s}{\partial z} \mathbf{k}
 $$
 
-可以看出标量场的梯度是一个矢量场，它表示 $s$ 在空间某一位置沿某一方向的变化量。 如果想要的到 $s$ 在某一特定方向 $\mathbf{e}_ {l}$ （方向 $l$ 上的单位矢量 $)$ 上的梯度，即方向导 数，则可以根据矢量点乘的几何意义来进行计算：
+可以看出标量场的梯度是一个矢量场，它表示 $s$ 在空间某一位置沿某一方向的变化量。如果想要的到 $s$ 在某一特定方向 $\mathbf{e}_ {l}$ （方向 $l$ 上的单位矢量 $)$ 上的梯度，即方向导数，则可以根据矢量点乘的几何意义来进行计算：
 
 $$
 \frac{d s}{d l}=\nabla s \cdot \mathbf{e}_ {l}=\|\nabla s\| \cos \left(\nabla s, \mathbf{e}_ {l}\right)
@@ -57,7 +57,7 @@ $$
 
 ## 4、旋度（curl)
 
-旋度是由 $\nabla$ 与矢量的叉乘得到，它的运算结果是一个矢量，代表了矢量做旋转运动的 方向和强度：
+旋度是由 $\nabla$ 与矢量的叉乘得到，它的运算结果是一个矢量，代表了矢量做旋转运动的方向和强度：
 
 $$
 \nabla \times \mathbf{v}=\left(\frac{\partial}{\partial x} \mathbf{i}+\frac{\partial}{\partial x} \mathbf{j}+\frac{\partial}{\partial x} \mathbf{k}\right) \times(u \mathbf{i}+v \mathbf{k}+w \mathbf{k})=\left[\begin{array}{ccc}\mathbf{i} & \mathbf{j} & \mathbf{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ u & v & w\end{array}\right]
