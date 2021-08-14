@@ -27,7 +27,7 @@ $$
 \frac{d s}{d l}=\nabla s \cdot \mathbf{e}_ {l}=\|\nabla s\| \cos \left(\nabla s, \mathbf{e}_ {l}\right)
 $$
 
-由此可见，当 $\cos \left(\nabla s, \mathbf{e}_ {l}\right)=1$ ， 即空间任意方向 $l$ 与梯度方向一致时沿该方向具有 最大梯度，因此 $\nabla s$ 代表了空间中任意点上梯度变化最大的方向和变化量，而且 $\nabla s$ 垂直于该点处的等值线或等值面。
+由此可见，当 $\cos \left(\nabla s, \mathbf{e}_ {l}\right)=1$ ， 即空间任意方向 $l$ 与梯度方向一致时沿该方向具有最大梯度，因此 $\nabla s$ 代表了空间中任意点上梯度变化最大的方向和变化量，而且 $\nabla s$ 垂直于该点处的等值线或等值面。
 
 ## 3、散度 (Divergence)
 
