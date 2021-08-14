@@ -42,7 +42,7 @@ $$
 
 ![](https://suifeng2020.github.io/images/posts/Gradient/img1.jpg)
 
-标量的梯度为矢量，因此对该矢量可以继续求散度，从而引入拉普拉斯算子 $\Delta=\nabla \bullet \nabla=\nabla^{2}$ :
+标量的梯度为矢量，因此对该矢量可以继续求散度，从而引入拉普拉斯算子 $\Delta=\nabla \cdot \nabla=\nabla^{2}$ :
 
 $$
 \nabla \cdot(\nabla s)=\nabla^{2} s=\frac{\partial^{2} s}{\partial x_ {i}^{2}}=\frac{\partial^{2} s}{\partial x^{2}}+\frac{\partial^{2} s}{\partial y^{2}}+\frac{\partial^{2} s}{\partial z^{2}}
