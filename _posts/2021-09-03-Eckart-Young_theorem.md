@@ -51,7 +51,7 @@ Now suppose some matrix $B \in \mathbb{R}^{m \times n}$ has rank $k$, then the d
  $\operatorname{null}(B)=\operatorname{span} \{ \mathbf{x}_ {1}, \ldots, \mathbf{x}_ {n-k} \}$
  {% endraw %}.
  Since the sum of dimension of $\operatorname{null}(B)$ and 
- $\operatorname{span} \left{\mathbf{v}_ {1}, \ldots, \mathbf{v}_ {k+1} \right}$ (dimension $k+1$) is $n+1>n$,so 
+ $\operatorname{span} \{\mathbf{v}_ {1}, \ldots, \mathbf{v}_ {k+1} \}$ (dimension $k+1$) is $n+1>n$,so 
 
 $$
 \operatorname{span}\left\{\mathbf{x}_ {1}, \ldots, \mathbf{x}_ {n-k}\right\} \cap \operatorname{span}\left\{\mathbf{v}_ {1}, \ldots, \mathbf{v}_ {k+1}\right\} \neq\{\mathbf{0}\}
