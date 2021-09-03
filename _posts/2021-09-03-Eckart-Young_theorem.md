@@ -47,7 +47,7 @@ $$
 - ### Proof. (2-norm case)
 
 Since $U A_ {k} V=\operatorname{diag}\left(\sigma_ {1}, \ldots, \sigma_ {k}, 0, \ldots, 0\right)$ it means that $A_ {k}$ is rank $k$. Moreover, $U^{T}\left(A-A_ {k}\right) V=\operatorname{diag}\left(0, \ldots, 0, \sigma_ {k+1}, \ldots, \sigma_ {p}\right)$ with the largest singular value is $\sigma_ {k+1}$ and thus $\left\|A-A_ {k}\right\|_ {2}=\sigma_ {k+1}$.
-Now suppose some matrix $B \in \mathbb{R}^{m \times n}$ has rank $k$, then the dimension of the nullspace of $B$ is $n-k$, which means we can find orthonormal vectors $\mathbf{x}_ {1}, \ldots, \mathbf{x}_ {n-k}$ that span the nullspace, i.e. $\mathrm{null}(B)=\operatorname{span}\left\{\mathbf{x}_ {1}, \ldots, \mathbf{x}_ {n-k}\right\} $ Since the sum of dimension of $\mathrm{null}(B)$ and $\operatorname{span}\left\{\mathbf{v}_ {1}, \ldots, \mathbf{v}_ {k+1}\right\}$ (dimension $k+1)$ is $n+1>n$, so
+Now suppose some matrix $B \in \mathbb{R}^{m \times n}$ has rank $k$, then the dimension of the nullspace of $B$ is $n-k$, which means we can find orthonormal vectors $\mathbf{x}_ {1}, \ldots, \mathbf{x}_ {n-k}$ that span the nullspace, i.e. $\operatorname{null}(B) = \operatorname{span} \left\{ \mathbf{x}_ {1}, \ldots, \mathbf{x}_ {n-k}\right\}$ Since the sum of dimension of $\operatorname{null}(B)$ and $\operatorname{span}\left\{\mathbf{v}_ {1}, \ldots, \mathbf{v}_ {k+1}\right\}$ (dimension $k+1)$ is $n+1>n$, so
 
 $$
 \operatorname{span}\left\{\mathbf{x}_ {1}, \ldots, \mathbf{x}_ {n-k}\right\} \cap \operatorname{span}\left\{\mathbf{v}_ {1}, \ldots, \mathbf{v}_ {k+1}\right\} \neq\{\mathbf{0}\}
