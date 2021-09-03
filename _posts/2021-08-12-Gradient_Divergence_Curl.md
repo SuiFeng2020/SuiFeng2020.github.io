@@ -60,7 +60,7 @@ $$
 旋度是由 $\nabla$ 与矢量的叉乘得到，它的运算结果是一个矢量，代表了矢量做旋转运动的方向和强度：
 
 $$
-\nabla \times \mathbf{v}=\left(\frac{\partial}{\partial x} \mathbf{i}+\frac{\partial}{\partial y} \mathbf{j}+\frac{\partial}{\partial z} \mathbf{k}\right) \times(u \mathbf{i}+v \mathbf{j}+w \mathbf{k})=\Vert\begin{array}{ccc}\mathbf{i} & \mathbf{j} & \mathbf{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ u & v & w\end{array}\Vert
+\nabla \times \mathbf{v}=\left(\frac{\partial}{\partial x} \mathbf{i}+\frac{\partial}{\partial y} \mathbf{j}+\frac{\partial}{\partial z} \mathbf{k}\right) \times(u \mathbf{i}+v \mathbf{j}+w \mathbf{k})= \Vert\begin{array}{ccc}\mathbf{i} & \mathbf{j} & \mathbf{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ u & v & w\end{array}\Vert
 $$
 
 $$
